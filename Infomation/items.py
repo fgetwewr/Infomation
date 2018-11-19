@@ -31,4 +31,5 @@ class InfomationItem(scrapy.Item):
     # 对应品牌词id
     brandWord = scrapy.Field()
 
+    relateId = scrapy.Field()
     main_url = scrapy.Field()

@@ -84,20 +84,20 @@ import urllib
 #         break
 # else:
 #     print('都不在')
-from pymongo.cursor import Cursor
-from scrapy.utils.project import get_project_settings
-import pymongo
-# from pymongo import cursor
-
-settings = get_project_settings()
-
-host = settings["MONGODB_HOST"]
-port = settings["MONGODB_PORT"]
-dbname = settings["MONGODB_DBNAME"]
-sheetname = settings['MONGODB_KWDSHEET']
-myclient = pymongo.MongoClient(host=host, port=port)
-db = myclient[dbname]
-kwd_sheet = db[sheetname]
+# from pymongo.cursor import Cursor
+# from scrapy.utils.project import get_project_settings
+# import pymongo
+# # from pymongo import cursor
+#
+# settings = get_project_settings()
+#
+# host = settings["MONGODB_HOST"]
+# port = settings["MONGODB_PORT"]
+# dbname = settings["MONGODB_DBNAME"]
+# sheetname = settings['MONGODB_KWDSHEET']
+# myclient = pymongo.MongoClient(host=host, port=port)
+# db = myclient[dbname]
+# kwd_sheet = db[sheetname]
 
 
 # print('11111111111111111111')
@@ -129,3 +129,4 @@ kwd_sheet = db[sheetname]
 # print(ent)
 # for value in ent:
 #     print(value)
+

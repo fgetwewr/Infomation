@@ -36,11 +36,10 @@ class InformationSpider(scrapy.Spider):
         kwd_db = myclient[dbname]
         kwd_sheet = kwd_db[sheetname]
 
+        # 查询数据库，获取关键字及对应id, 并构造请求start_url
         for kwd in kwd_sheet.find():
             self.kwd_dict['{}'.format(kwd.get('name'))] = kwd.get('id')
             self.start_urls.append(base_url.format(kwd.get('name')))
-        # print('??????????????????????????????????????????????????')
-        # print(self.start_urls)
 
     def parse(self, response):
         # scrapy shell调试使用
@@ -59,6 +58,34 @@ class InformationSpider(scrapy.Spider):
         for info in info_list:
             item = InfomationItem()
 
+            # 对外暴露id
+            rand_num = random.random() * 9000
+            num = round(rand_num) + 1000
+            timed = round(time.time() * 1000)
+            item['autoId'] = str(num) + str(timed)
+
+            # 通过判断response.meta['relateId']， 如果存在说明是从更多资讯传递过来的参数，否则按照正常逻辑执行
+            try:
+                relateId = response.meta['relateId']
+                item['relateId'] = relateId
+                # print('try%s' % item)
+            except:
+                item['relateId'] = ''
+                # print('except%s' % item)
+
+            # 判断是否有 "查看更多相关资讯"，如果有继续回调parse进行抓取
+            more_info = info.xpath('.//span[@class="c-info"]/a[re:test(text(),".*?查看更多相关资讯.*?")]/@href').extract_first()
+            if more_info:
+                # print('----------------------------------------')
+                # print('这是相关资讯里的内容')
+                relateId = item['autoId']   # 设置relateId, 关联autoId， 并将其传递给回调函数
+                more_info_url = response.urljoin(more_info)
+                yield scrapy.Request(
+                    url=more_info_url,
+                    meta={'relateId': relateId},
+                    callback=self.parse,
+                )
+
             # 获取网站链接
             item['sourceWeb'] = info.xpath('./h3[@class="c-title"]/a/@href').extract_first()
 
@@ -68,8 +95,7 @@ class InformationSpider(scrapy.Spider):
             title = pattern1.findall(title_html)
             item['title'] = re.sub(r'<em>|</em>', '', title[0]).strip()
 
-            # 先得到含有内容的Html
-            content = info.xpath('.//div').extract_first()
+            content = info.xpath('.//div').extract_first()       # 先得到含有内容的Html
             # 获取时间，媒体
             # 获得媒体
             pattern_media = re.compile(r'<p class="c-author">(\w+).*?</p>', re.S)
@@ -103,13 +129,7 @@ class InformationSpider(scrapy.Spider):
             if image is not None:
                 item['imageLogo'] = image
             else:
-                item['imageLogo'] = ' '
-
-            # 对外暴露id
-            rand_num = random.random() * 9000
-            num = round(rand_num) + 1000
-            timed = round(time.time() * 1000)
-            item['autoId'] = str(num) + str(timed)
+                item['imageLogo'] = ''
 
             # 对应关键字id
             item['brandWord'] = self.kwd_dict.get(keyword)
@@ -126,7 +146,7 @@ class InformationSpider(scrapy.Spider):
                     item['wordPos'] = '2'
                     break
 
-                # 判断关键字是否存在于详情页内容里
+            # 判断关键字是否存在于详情页内容里
             else:
                 # 通过requests.get()请求单条资讯url,判断关键字是否在内容里面
                 try:
@@ -141,57 +161,23 @@ class InformationSpider(scrapy.Spider):
                     # print(e)
                     item['wordPos'] = '0'
                     print(item)
-                    self.logger.info('请求详情页%s' % e)
-            item['relateId'] = ' '
+                    self.logger.info('超时，请求详情页%s' % e)
+
             item['main_url'] = response.url
             yield item
 
-            # 判断是否有 "查看更多相关资讯"，如果有继续回调parse进行抓取
-            more_info = info.xpath('.//span[@class="c-info"]/a[re:test(text(),".*?查看更多相关资讯.*?")]/@href').extract_first()
-
-            if more_info:
-                print('----------------------------------------')
-                print(item)
-                more_info_url = response.urljoin(more_info)
-                # print(more_info_url)
-                print('这是相关资讯里的内容')
+        # 获取下一页链接
+        url_next = response.xpath('//p[@id="page"]//a[re:test(text(),"下一页")]/@href').extract_first()
+        if url_next is not None:
+            # print('这是第%s页***********************************************')
+            # 匹配到页码，只抓取10页以内的内容
+            pattern_url = re.compile(r'&pn=(\d+)')
+            page = pattern_url.findall(url_next)[0]
+            if int(page) <= 90:
+                url_next = response.urljoin(url_next)
+                # print(url_next)
                 yield scrapy.Request(
-                    url=more_info_url,
-                    callback=self.parse,
+                    url_next,
+                    callback=self.parse
                 )
 
-            # 获取下一页链接
-            url_next = response.xpath('//p[@id="page"]//a[re:test(text(),"下一页")]/@href').extract_first()
-            if url_next is not None:
-                # print('这是第%s页***********************************************')
-                # 匹配到页码，只抓取10页以内的内容
-                pattern_url = re.compile(r'&pn=(\d+)')
-                page = pattern_url.findall(url_next)[0]
-                if int(page) <= 90:
-                    url_next = response.urljoin(url_next)
-                    # print(url_next)
-                    yield scrapy.Request(
-                        url_next,
-                        callback=self.parse
-                    )
-
-    #
-    # def kwd_detail(self, response):
-    #     print('YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY')
-    #     keyword = response.meta['kwd']
-    #     print(keyword)
-    #     item = response.meta['item']
-    #     detail_text = response.text
-    #     for kwd in keyword.split(' '):
-    #         if kwd in detail_text:
-    #             item['wordPos'] = '4'
-    #             print('关键字在详情页关键字在详情页关键字在详情页关键字在详情页关键字在详情页关键字在详情页关键字在详情页关键字在详情页')
-    #             # print(item)
-    #             break
-    #     else:
-    #         print('关键字也不再详情页关键字也不再详情页关键字也不再详情页关键字也不再详情页关键字也不再详情页关键字也不再详情页')
-    #         # print(item)
-    #         item['wordPos'] = '0'
-    #     print('hehehhehehehehehehehehehehhehehehehehehehhe')
-    #     print(item.get('wordPos'))
-    #     yield item

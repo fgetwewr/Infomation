@@ -40,32 +40,36 @@ class Storage_kwd:
         #
         self.ids = self.mydb['ids']
         self.kwd_dict = {}
+        self.kwd_sheet.create_index([('name', pymongo.ASCENDING)], unique=True)
 
-    def storage(self):
 
-        self.kwd_dict['name'] = '小龙坎 地沟油'
-        self.kwd_dict['wordType'] = '品牌词'
-        self.kwd_dict['platform'] = '百度'
+    def storage(self, kwd_name):
 
-        # 对外暴露id
-        rand_num = random.random() * 9000
-        num = round(rand_num) + 1000
-        timed = round(time.time() * 1000)
-        self.kwd_dict['autoId'] = str(num) + str(timed)
-        # 自增id
-        self.kwd_dict['id'] = getNextValue('productid')
+            self.kwd_dict['name'] = kwd_name
+            self.kwd_dict['wordType'] = '品牌词'
+            self.kwd_dict['platform'] = '百度'
+
+            # 对外暴露id
+            rand_num = random.random() * 9000
+            num = round(rand_num) + 1000
+            timed = round(time.time() * 1000)
+            self.kwd_dict['autoId'] = str(num) + str(timed)
+            # 自增id
+            self.kwd_dict['id'] = getNextValue('productid')
 
     def insert_kwd(self):
         self.kwd_sheet.insert(self.kwd_dict)
         print('关键字插入成功')
 
 
-
 if __name__ == '__main__':
+    kwd_list = ['星空媒体', '海底捞', '三只松鼠', '三只松鼠 霉变', '软文街', '小龙坎 地沟油']
 
-    kwd_list = ['星空媒体, 海底捞, 三只松鼠, 三只松鼠 霉变, 软文街, 小龙坎 地沟油']
-
-    kwd = Storage_kwd()
-    for i in kwd_list:
-        kwd.storage()
-        kwd.insert_kwd()
+    for kwd_name in kwd_list:
+        kwd = Storage_kwd()
+        print(kwd_name)
+        kwd.storage(kwd_name)
+        try:
+            kwd.insert_kwd()
+        except:
+            print('关键字已经存在')

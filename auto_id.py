@@ -25,3 +25,4 @@ def getNextValue(name):
 if __name__ == '__main__':
     # 执行前先运行，实现增id 的归零
     ids.insert_one(({'_id': 'productid', 'sequence_value': 0}))
+    print('初始化Id成功')
