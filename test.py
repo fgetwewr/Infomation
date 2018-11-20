@@ -129,4 +129,9 @@ import urllib
 # print(ent)
 # for value in ent:
 #     print(value)
+import datetime
+hours[0] = 7
+p_hours = (datetime.datetime.now() + datetime.timedelta(days=-(hours[0]))).strftime('%Yn%my%dr %H:%M')
+item['newAt'] = p_hours.replace('n', '年').replace('y', '月').replace('r', '日')
+
 

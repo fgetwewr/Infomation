@@ -92,8 +92,8 @@ MONGODB_KWDSHEET = 'kwd_sheet'
 
 # 日志等级
 # DEBUG INFO WARNING ERROR CRITICAL
-LOG_LEVEL = 'INFO'
-LOG_FILE = 'logs.txt'
+# LOG_LEVEL = 'INFO'
+# LOG_FILE = 'logs.txt'
 # LOG_STDOUT = True
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

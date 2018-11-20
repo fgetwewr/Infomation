@@ -15,12 +15,15 @@ db = client[dbname]
 ids = db['ids']
 
 
-# 自增函数
+# genric_key表自增函数
 def getNextValue(name):
     ret = ids.find_and_modify({'_id': name}, {'$inc': {'sequence_value': 1}}, safe=True, new=True)
     new = ret['sequence_value']
     return new
 
+# domain_key表自增函数
+def domain_id(name):
+    pass
 
 if __name__ == '__main__':
     # 执行前先运行，实现增id 的归零
