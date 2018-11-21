@@ -32,4 +32,4 @@ class InfomationItem(scrapy.Item):
     brandWord = scrapy.Field()
 
     relateId = scrapy.Field()
-    main_url = scrapy.Field()
+    # main_url = scrapy.Field()

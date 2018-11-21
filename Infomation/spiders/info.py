@@ -32,7 +32,8 @@ class InformationSpider(scrapy.Spider):
         base_url = 'https://www.baidu.com/s?ie=utf-8&cl=2&rtt=1&bsst=1&tn=news&word={}&pn=0'
 
         # 海底捞
-        domian_url = 'https://www.baidu.com/s?wd=site:qq.com 海底捞&pn=30&ie=utf-8'
+        domian_url = 'https://www.baidu.com/s?wd=site:qq.com 海底捞&pn=00&ie=utf-8'
+        # domian_url = 'https://www.baidu.com/s?wd=site%3Aqq.com%20%E6%B5%B7%E5%BA%95%E6%8D%9E&pn=0&oq=site%3Aqq.com%20%E6%B5%B7%E5%BA%95%E6%8D%9E&ie=utf-8&rsv_pq=bd7b1ee800020275&rsv_t=3cb38miwXpTj5fsTzfQfwd5nj2dL8Y8UQa5Jb%2Bdu%2FTNswhei1woNYqEH1WM'
         # 三只松鼠
 
         # 连接数据库
@@ -47,12 +48,12 @@ class InformationSpider(scrapy.Spider):
         yield scrapy.Request(url=domian_url, callback=self.domain_parse)
 
         # 查询数据库，获取关键字及对应id, 并构造请求start_url
-        for kwd in kwd_sheet.find().limit(1):
+        for kwd in kwd_sheet.find().limit(2):
             self.kwd_dict['{}'.format(kwd.get('name'))] = kwd.get('id')
             # self.start_urls.append(base_url.format(kwd.get('name')))
             url = base_url.format(kwd.get('name'))
             # print(kwd.get('name'))
-            # yield scrapy.Request(url=url, callback=self.generic_parse)
+            yield scrapy.Request(url=url, callback=self.generic_parse)
 
     def generic_parse(self, response):
         # scrapy shell调试使用
@@ -111,8 +112,20 @@ class InformationSpider(scrapy.Spider):
             content = info.xpath('.//div').extract_first()       # 先得到含有内容的Html
             # 获取时间，媒体
             # 获得媒体
-            pattern_media = re.compile(r'<p class="c-author">(\w+).*?</p>', re.S)
-            item['mediaName'] = pattern_media.findall(content)[0]
+            # pattern_media1 = re.compile(r'<p class="c-author">(\w+).*?</p>', re.S)
+            # pattern_media2 = re.compile(r'<img class="source-icon".*?>(\w+).*?</p>', re.S)
+            media = info.xpath('.//p[@class="c-author"]/text()').extract()
+            if media[-1]:
+                pattern_media = re.compile(r'(\w+).*?').findall(media[-1])
+                item['mediaName'] = pattern_media[0]
+            else:
+                item['mediaName'] = ''
+            print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
+            # print(media)
+            # print('extract', media.extract())
+            # print('extract_first', media.extract_first())
+            # print(pattern_media)
+
 
             # 获取 格式为2018年10月08日 15:11 日期
             pattern_date = re.compile(r'<p class="c-author">.*?(\d+年\d+月\d+日 \d+:\d+).*?</p>', re.S)
@@ -176,7 +189,7 @@ class InformationSpider(scrapy.Spider):
                     print(item)
                     self.logger.info('超时，请求详情页%s' % e)
 
-            item['main_url'] = response.url
+            # item['main_url'] = response.url
             yield item
 
         # # 获取下一页链接
@@ -204,6 +217,12 @@ class InformationSpider(scrapy.Spider):
         kwd_encode = re.compile(r'\?wd=(.*?)&').findall(url)
         keyword_init = urllib.parse.unquote(kwd_encode[0])
         keyword = re.sub(r'\+', ' ', keyword_init).split(' ')
+        if keyword[0] == 'site:qq.com':
+            keyword[0] = '腾讯网'
+
+        # print(response.text)
+        with open('baidu.html', 'a', encoding='utf8') as f:
+            f.write(response.text)
 
         # 获取当前页面资讯列表
         info_list = response.xpath('//div[@id="content_left"]/div[@class="result c-container "]')
@@ -264,34 +283,64 @@ class InformationSpider(scrapy.Spider):
             if text1:
                 pattern_info2 = re.compile(r'<span .*?</span>(.*)', re.S)
                 text2 = pattern_info2.findall(text1[0])
-                print('text1%s' % text1[0])
-                print('text2%s' % text2)
                 if text2:
                     item['info'] = re.sub(r'<em>|</em>', '', text2[0].strip())
                 else:
                     item['info'] = re.sub(r'<em>|</em>', '', text1[0].strip())
             else:
-                print(content)
-                print('*********************')
-                pattern_info3 = re.compile(r'<span>视频</span>.*?</p><p>(.*?)</p><div class="g">', re.S)
+                pattern_info3 = re.compile(r'<span>视频</span>.*?</p><p><span class=" newTimeFactor_before_abs m">.*?</span>(.*?)</p><div class="g">', re.S)
                 text3 = pattern_info3.findall(content)
-                item['info'] = re.sub(r'<em>|</em>', '', text3[0].strip())
-                print('text3%s' % text3)
+                if text3:
+                    item['info'] = re.sub(r'<em>|</em>', '', text3[0].strip())
+                else:
+                    pattern_info4 = re.compile(r'<span>视频</span>.*?<p>(.*?)</p><div class="g">', re.S)
+                    text4 = pattern_info4.findall(content)
+                    item['info'] = re.sub(r'<em>|</em>', '', text4[0].strip())
 
-
-            print(item)
-
-
-
-            # '      <div class="c-abstract"><span class=" newTimeFactor_before_abs m">.*?</span>(.*?)<em>...</em></div>'
-            # '      <div class="c-abstract"><span class=" newTimeFactor_before_abs m">.*?</span>(.*?)</div>'
-            # 获取图片或视频链接
+            # 获取图片
+            image1 = info.xpath(r'.//a[@class="c-img6"]/img/@src').extract_first()      # 普通图片
+            image2 = info.xpath(r'./div/a/img/@src').extract_first()                    # 视频图片
+            if image1:
+                item['imageLogo'] = image1
+            elif image2:
+                item['imageLogo'] = image2
+            else:
+                item['imageLogo'] = ''
 
             # 对应关键字id
 
+
+
             # 判断关键字是否在标题或内容
+            if keyword[1] in item['title'] and keyword[1] in item['info']:
+                item['wordPos'] = '3'
+            elif keyword[1] in item['title']:
+                item['wordPos'] = '1'
+            elif keyword[1] in item['info']:
+                item['wordPos'] = '2'
+            else:
+                # 通过requests.get()请求单条资讯url, 判断关键字是否在内容里面
+                try:
+                    resp = requests.get(url=item['sourceWeb'], timeout=5).text
+                    if keyword[1] in resp:
+                        item['wordPos'] = '2'
+                    else:
+                        item['wordPos'] = '0'
+                except Exception as e:
+                    item['wordPos'] = '0'
+                    self.logger.info('超时， 请求详情页%s' % e)
 
-
-            # 获取下一页链接
-
+            yield item
+        # 获取下一页链接
+        url_next = response.xpath('//div[@id="page"]/a[re:test(text(),"下一页")]/@href').extract_first()
+        if url_next:
+            # 匹配到页码，之抓取10页以内的内容
+            pattern_url = re.compile(r'&pn=(\d+)')
+            page = pattern_url.findall(url_next)[0]
+            if int(page) <= 90:
+                url_next = response.urljoin(url_next)
+                yield scrapy.Request(
+                    url=url_next,
+                    callback=self.domain_parse
+                )
 

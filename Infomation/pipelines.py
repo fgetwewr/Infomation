@@ -7,11 +7,57 @@
 
 import json
 import pymongo
+import pymysql
 from scrapy.conf import settings
 from pymongo.errors import DuplicateKeyError
 
 import logging
 logger = logging.getLogger(__name__)
+
+
+class MysqlPipeline(object):
+    def __init__(self, host, database, user, password, port):
+        self.host = host
+        self.database = database
+        self.user = user
+        self.password = password
+        self.port = port
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            host=crawler.settings.get("MYSQL_HOST"),
+            database=crawler.settings.get("MYSQL_DATABASE"),
+            user=crawler.settings.get("MYSQL_USER"),
+            password=crawler.settings.get("MYSQL_PASSWORD"),
+            port=crawler.settings.get("MYSQL_PORT")
+        )
+
+    def open_spider(self, spider):
+        self.db = pymysql.connect(host=self.host, port=self.port, user=self.user, db=self.database, password=self.password)
+        self.cursor = self.db.cursor()
+
+    def process_item(self, item, spider):
+        data = dict(item)
+        keys = ','.join(data.keys())
+        values = ','.join(['%s']*len(data))
+        print('*'*90)
+        sql = "insert into Info(%s) values (%s)" % (keys, values)
+        try:
+            self.cursor.execute(sql, [v for k, v in data.items()])
+        except Exception as e:
+            self.db.rollback()
+            print(e)
+        else:
+            self.db.commit()
+            print('处理成功', self.cursor.rowcount, '条数据')
+        return item
+
+    def close_spider(self, spider):
+        self.cursor.close()
+        self.db.close()
+
+
 
 
 class InfomationPipeline(object):

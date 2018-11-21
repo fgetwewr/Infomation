@@ -39,7 +39,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 5
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -80,7 +80,8 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    # 'Infomation.pipelines.InfomationPipeline': 300,
-   'Infomation.pipelines.MongoPipeline': 300,
+   # 'Infomation.pipelines.MongoPipeline': 300,
+   'Infomation.pipelines.MysqlPipeline': 300,
 }
 
 # 连接数据库，存储到MongoDB
@@ -90,11 +91,23 @@ MONGODB_DBNAME = 'info_db'
 MONGODB_INFOSHEET = 'info_sheet'
 MONGODB_KWDSHEET = 'kwd_sheet'
 
+
+# MySQl配置参数
+MYSQL_HOST = '127.0.0.1'
+MYSQL_PORT = 3306
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = '000000'
+MYSQL_DATABASE = 'Infomation'
+
+
+
 # 日志等级
 # DEBUG INFO WARNING ERROR CRITICAL
 # LOG_LEVEL = 'INFO'
 # LOG_FILE = 'logs.txt'
 # LOG_STDOUT = True
+
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

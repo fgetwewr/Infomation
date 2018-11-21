@@ -129,9 +129,65 @@ import urllib
 # print(ent)
 # for value in ent:
 #     print(value)
-import datetime
-hours[0] = 7
-p_hours = (datetime.datetime.now() + datetime.timedelta(days=-(hours[0]))).strftime('%Yn%my%dr %H:%M')
-item['newAt'] = p_hours.replace('n', '年').replace('y', '月').replace('r', '日')
+# import datetime
+# hours[0] = 7
+# p_hours = (datetime.datetime.now() + datetime.timedelta(days=-(hours[0]))).strftime('%Yn%my%dr %H:%M')
+# item['newAt'] = p_hours.replace('n', '年').replace('y', '月').replace('r', '日')
+
+
+import pymysql
+from scrapy.utils.project import get_project_settings
+
+settings = get_project_settings()
+port = settings['MYSQL_PORT']
+host = settings['MYSQL_HOST']
+user = settings['MYSQL_USER']
+dbname = settings['MYSQL_DATABASE']
+password = settings['MYSQL_PASSWORD']
+
+db = pymysql.connect(host=host, port=port, user=user, db=dbname, password=password)
+cursor = db.cursor()
+cursor.execute("drop table if exists Info")
+
+sql = """create table Info(
+id int primary key auto_increment,
+autoId char(17) not null,
+relateId char(17),
+sourceWeb varchar(240),
+title varchar(80),
+mediaName varchar(12),
+newAt varchar(20),
+info varchar(120),
+imageLogo varchar(120),
+brandWord varchar(10),
+wordPos char(1),
+unique key pn (sourceWeb))"""
+cursor.execute(sql)
+
+# data = {
+# 	"autoId" : "66001542678902826",
+# 	"relateId" : "64121542678899349",
+# 	"sourceWeb" : "http://finance.sina.com.cn/stock/s/2018-11-20/doc-ihmutuec1819309.shtml",
+# 	"title" : "千山药机董秘因个人原因 此前曾表示对三季报不负责",
+# 	"mediaName" : "新浪",
+# 	"newAt" : "2018年11月20日 09:17",
+# 	"info" : "千山药机董秘因“个人原因”辞职此前曾表示对三季报不负责上周五晚间,千山药机(300216)发布公告:公司副总经理、董秘陈龙晖因个人原因申请辞职。值得一提的是,就...",
+# 	"imageLogo" : "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2448508487,3224046481&fm=55&app=22&f=GIF?w=121&h=81",
+# 	"brandWord" : "3",
+# 	"wordPos" : 0}
+# keys = ','.join(data.keys())
+# print(keys)
+# values = ','.join(['%s']*len(data))
+# print(values)
+# print('*'*90)
+# sql = "insert into Info(%s) values (%s)" % (keys, values)
+# cursor.execute(sql, [v for k, v in data.items()])
+db.commit()
+#
+# db.commit()
+cursor.close()
+db.close()
+
+
 
 
