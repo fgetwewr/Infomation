@@ -147,22 +147,35 @@ password = settings['MYSQL_PASSWORD']
 
 db = pymysql.connect(host=host, port=port, user=user, db=dbname, password=password)
 cursor = db.cursor()
-cursor.execute("drop table if exists Info")
 
-sql = """create table Info(
-id int primary key auto_increment,
-autoId char(17) not null,
-relateId char(17),
-sourceWeb varchar(240),
-title varchar(80),
-mediaName varchar(12),
-newAt varchar(20),
-info varchar(120),
-imageLogo varchar(120),
-brandWord varchar(10),
-wordPos char(1),
-unique key pn (sourceWeb))"""
-cursor.execute(sql)
+brand_sql = """select * from media;"""
+cursor.execute(brand_sql)
+result = cursor.fetchall()
+print(result)
+for i in result:
+    print(i)
+# print(result[0][0], result[0][1])
+# print(result[1][0], result[1][1])
+# print(result[2][0], result[2][1])
+
+
+
+# cursor.execute("drop table if exists Info")
+#
+# sql = """create table Info(
+# id int primary key auto_increment,
+# autoId char(17) not null,
+# relateId char(17),
+# sourceWeb varchar(240),
+# title varchar(80),
+# mediaName varchar(12),
+# newAt varchar(20),
+# info varchar(120),
+# imageLogo varchar(120),
+# brandWord varchar(10),
+# wordPos char(1),
+# unique key pn (sourceWeb))"""
+# cursor.execute(sql)
 
 # data = {
 # 	"autoId" : "66001542678902826",
@@ -182,12 +195,15 @@ cursor.execute(sql)
 # print('*'*90)
 # sql = "insert into Info(%s) values (%s)" % (keys, values)
 # cursor.execute(sql, [v for k, v in data.items()])
-db.commit()
-#
 # db.commit()
-cursor.close()
-db.close()
+# #
+# # db.commit()
+# cursor.close()
+# db.close()
 
+# import time
+# import datetime
+# print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') )
 
 
 

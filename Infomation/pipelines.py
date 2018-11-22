@@ -42,22 +42,24 @@ class MysqlPipeline(object):
         keys = ','.join(data.keys())
         values = ','.join(['%s']*len(data))
         print('*'*90)
-        sql = "insert into Info(%s) values (%s)" % (keys, values)
+        sql = "insert into news(%s) values (%s)" % (keys, values)
+        # print(sql)
+        # print(data.items())
+        # print(self.cursor.execute(sql, [v for k, v in data.items()]))
+        print('_______________________________')
         try:
             self.cursor.execute(sql, [v for k, v in data.items()])
+            self.db.commit()
+            print('处理成功', self.cursor.rowcount, '条数据')
         except Exception as e:
             self.db.rollback()
             print(e)
-        else:
-            self.db.commit()
-            print('处理成功', self.cursor.rowcount, '条数据')
-        return item
+
+        # return item
 
     def close_spider(self, spider):
         self.cursor.close()
         self.db.close()
-
-
 
 
 class InfomationPipeline(object):

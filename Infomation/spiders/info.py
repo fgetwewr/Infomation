@@ -3,13 +3,14 @@ import re
 import time
 import random
 import datetime
-import pymongo
+import pymysql
 import urllib
 from urllib import parse
 import scrapy
 from Infomation.items import InfomationItem
 from scrapy.utils.project import get_project_settings
 
+settings = get_project_settings()
 
 # import logging
 #
@@ -18,44 +19,56 @@ from scrapy.utils.project import get_project_settings
 
 class InformationSpider(scrapy.Spider):
     name = 'info'
-    allowed_domains = ['www.baidu.com']
+    # allowed_domains = ['www.baidu.com']
 
     def __init__(self):
         super(InformationSpider, self).__init__()
-        self.kwd_dict = {}
-
-        # def __init__(self, base_url=base_url, *args, **kwargs):
-        #     super(InformationSpider, self).__init__(*args, **kwargs)
-        # self.start_urls = []
-
-    def start_requests(self):
-        base_url = 'https://www.baidu.com/s?ie=utf-8&cl=2&rtt=1&bsst=1&tn=news&word={}&pn=0'
-
-        # 海底捞
-        domian_url = 'https://www.baidu.com/s?wd=site:qq.com 海底捞&pn=00&ie=utf-8'
-        # domian_url = 'https://www.baidu.com/s?wd=site%3Aqq.com%20%E6%B5%B7%E5%BA%95%E6%8D%9E&pn=0&oq=site%3Aqq.com%20%E6%B5%B7%E5%BA%95%E6%8D%9E&ie=utf-8&rsv_pq=bd7b1ee800020275&rsv_t=3cb38miwXpTj5fsTzfQfwd5nj2dL8Y8UQa5Jb%2Bdu%2FTNswhei1woNYqEH1WM'
-        # 三只松鼠
 
         # 连接数据库
-        settings = get_project_settings()
-        host = settings['MONGODB_HOST']
-        port = settings['MONGODB_PORT']
-        dbname = settings['MONGODB_DBNAME']
-        sheetname = settings['MONGODB_KWDSHEET']
-        myclient = pymongo.MongoClient(host=host, port=port)
-        kwd_db = myclient[dbname]
-        kwd_sheet = kwd_db[sheetname]
-        yield scrapy.Request(url=domian_url, callback=self.domain_parse)
+        self.port = settings['MYSQL_PORT']
+        self.host = settings['MYSQL_HOST']
+        self.user = settings['MYSQL_USER']
+        self.dbname = settings['MYSQL_DATABASE']
+        self.password = settings['MYSQL_PASSWORD']
+        self.db = pymysql.connect(host=self.host, port=self.port, user=self.user, db=self.dbname, password=self.password)
+        self.cursor = self.db.cursor()
+
+        self.brand_dict = {}
+        self.media_dict = {}
+
+    def start_requests(self):
+        # 百度新闻资讯
+        # base_url = 'https://www.baidu.com/s?ie=utf-8&cl=2&rtt=1&bsst=1&tn=news&word={}&pn=0'
+        brand_sql = "select * from brand;"
+        self.cursor.execute(brand_sql)
+        brand_result = self.cursor.fetchall()
+        print(brand_result)
+        for brand in brand_result:
+            print(brand)
+            self.brand_dict['{}'.format(brand[1])] = brand[0]
+            brand_url = 'https://www.baidu.com/s?ie=utf-8&cl=2&rtt=1&bsst=1&tn=news&word={}&pn=0'.format(brand[1])
+            # yield scrapy.Request(url=brand_url, callback=self.brand_parse)
 
         # 查询数据库，获取关键字及对应id, 并构造请求start_url
-        for kwd in kwd_sheet.find().limit(2):
-            self.kwd_dict['{}'.format(kwd.get('name'))] = kwd.get('id')
-            # self.start_urls.append(base_url.format(kwd.get('name')))
-            url = base_url.format(kwd.get('name'))
-            # print(kwd.get('name'))
-            yield scrapy.Request(url=url, callback=self.generic_parse)
+        # for kwd in kwd_sheet.find().limit(2):
+        #     self.kwd_dict['{}'.format(kwd.get('name'))] = kwd.get('id')
+        #     # self.start_urls.append(base_url.format(kwd.get('name')))
+        #     url = base_url.format(kwd.get('name'))
+        #     # print(kwd.get('name'))
+        #     yield scrapy.Request(url=url, callback=self.generic_parse)
 
-    def generic_parse(self, response):
+        # 百度网页新闻
+        # domian_url = 'https://www.baidu.com/s?wd=site:{} {}&pn=0&ie=utf-8'
+        media_sql = 'select * from media;'
+        self.cursor.execute(media_sql)
+        media_result = self.cursor.fetchall()
+        for media in media_result:
+            self.media_dict['{}'.format(media[4])] = media[2]
+            for brand in brand_result:
+                media_url = 'https://www.baidu.com/s?wd=site:{} {}&pn=0&ie=utf-8'.format(media[4], brand[1])
+                yield scrapy.Request(url=media_url, callback=self.domain_parse)
+
+    def brand_parse(self, response):
         # scrapy shell调试使用
         # if item['title'] == '今晚十点,我们要公布一件事情':
         #     from scrapy.shell import inspect_response
@@ -64,9 +77,10 @@ class InformationSpider(scrapy.Spider):
         # 获取请求url，正则匹配到关键字，解码
         url = response.url
         kwd_encode = re.compile(r'&word=(.*?)&').findall(url)
-        keyword_init = urllib.parse.unquote(kwd_encode[0])
-        keyword = re.sub(r'\+', ' ', keyword_init)
-
+        keyword = urllib.parse.unquote(kwd_encode[0])
+        # keyword = re.sub(r'\+', ' ', keyword_init)
+        print("{{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{")
+        print(self.brand_dict)
         # 获取当前页面资讯列表
         info_list = response.xpath('//div[@id="content_left"]//div[@class="result"]')
         for info in info_list:
@@ -97,11 +111,11 @@ class InformationSpider(scrapy.Spider):
                 yield scrapy.Request(
                     url=more_info_url,
                     meta={'relateId': relateId},
-                    callback=self.generic_parse,
+                    callback=self.brand_parse,
                 )
 
             # 获取网站链接
-            item['sourceWeb'] = info.xpath('./h3[@class="c-title"]/a/@href').extract_first()
+            item['newsLink'] = info.xpath('./h3[@class="c-title"]/a/@href').extract_first()
 
             # 获取标题
             title_html = info.xpath('./h3[@class="c-title"]/a').extract_first()
@@ -120,12 +134,11 @@ class InformationSpider(scrapy.Spider):
                 item['mediaName'] = pattern_media[0]
             else:
                 item['mediaName'] = ''
-            print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
+            # print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
             # print(media)
             # print('extract', media.extract())
             # print('extract_first', media.extract_first())
             # print(pattern_media)
-
 
             # 获取 格式为2018年10月08日 15:11 日期
             pattern_date = re.compile(r'<p class="c-author">.*?(\d+年\d+月\d+日 \d+:\d+).*?</p>', re.S)
@@ -137,14 +150,16 @@ class InformationSpider(scrapy.Spider):
             pattern_minute = re.compile(r'<p class="c-author">.*?(\w+)分钟前.*?</p>', re.S)
             minutes = pattern_minute.findall(content)
             if date:
-                item['newAt'] = date[0]
+                date = date[0].replace('年', '-').replace('月', '-').replace('日', '')
+                item['newsAt'] = date
             elif hours:
-                p_hours = (datetime.datetime.now() + datetime.timedelta(hours=-int(hours[0]))).strftime('%Yn%my%dr %H:%M')
-                item['newAt'] = p_hours.replace('n', '年').replace('y', '月').replace('r', '日')
+                p_hours = (datetime.datetime.now() + datetime.timedelta(hours=-int(hours[0]))).strftime('%Y-%m-%d %H:%M:%S')
+                # item['newsAt'] = p_hours.replace('n', '年').replace('y', '月').replace('r', '日')
+                item['newsAt'] = p_hours
             elif minutes:
-                p_minutes = (datetime.datetime.now() + datetime.timedelta(minutes=-int(minutes[0]))).strftime('%Yn%my%dr %H:%M')
-                item['newAt'] = p_minutes.replace('n', '年').replace('y', '月').replace('r', '日')
-
+                p_minutes = (datetime.datetime.now() + datetime.timedelta(minutes=-int(minutes[0]))).strftime('%Y-%m-%d %H:%M:%S')
+                # item['newsAt'] = p_minutes.replace('n', '年').replace('y', '月').replace('r', '日')
+                item['newsAt'] = p_minutes
             # 获取内容
             pattern_info = re.compile(r'<p class="c-author">.*?</p>(.*?)<span class="c-info">', re.S)
             text = pattern_info.findall(content)
@@ -153,59 +168,57 @@ class InformationSpider(scrapy.Spider):
             # 获取图片
             image = info.xpath(r'.//div[@class="c-span6"]/a[@class]/img/@src').extract_first()
             if image is not None:
-                item['imageLogo'] = image
+                item['newsLogo'] = image
+                item['logoType'] = '1'      # 新闻Logo对应类型，0: 无(默认),1: 图片地址, 2：视频地址
             else:
-                item['imageLogo'] = ''
+                item['newsLogo'] = ''
+                item['logoType'] = '0'
 
             # 对应关键字id
-            item['brandWord'] = self.kwd_dict.get(keyword)
+            item['brandId'] = self.brand_dict.get(keyword)
 
             # 判断关键字是否在标题或内容里面
-            for kwd in keyword.split(' '):
-                if (kwd in item['title']) and (kwd in item['info']):
-                    item['wordPos'] = '3'
-                    break
-                elif kwd in item['title']:
-                    item['wordPos'] = '1'
-                    break
-                elif kwd in item['info']:
-                    item['wordPos'] = '2'
-                    break
-
+            if (keyword in item['title']) and (keyword in item['info']):
+                item['brandPos'] = '3'
+            elif keyword in item['title']:
+                item['brandPos'] = '1'
+            elif keyword in item['info']:
+                item['brandPos'] = '2'
             # 判断关键字是否存在于详情页内容里
             else:
                 # 通过requests.get()请求单条资讯url,判断关键字是否在内容里面
                 try:
-                    resp = requests.get(url=item['sourceWeb'], timeout=5).text
-                    for kwd in keyword.split(' '):
-                        if kwd in resp:
-                            item['wordPos'] = '2'
-                            break
+                    resp = requests.get(url=item['newsLink'], timeout=5).text
+                    if keyword in resp:
+                        item['brandPos'] = '2'
+                        break
                     else:
-                        item['wordPos'] = '0'
+                        item['brandPos'] = '0'
                 except Exception as e:
                     # print(e)
-                    item['wordPos'] = '0'
+                    item['brandPos'] = '0'
                     print(item)
                     self.logger.info('超时，请求详情页%s' % e)
 
-            # item['main_url'] = response.url
+            item['fromSrc'] = '1'       # 抓取来源 1: 百度新闻资讯抓取,2: 百度网页抓取，3: 今日头条抓取
+            item['createdAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')     # 创建时间
+            item['updatedAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')     # 更新时间
+
             yield item
 
-        # # 获取下一页链接
-        # url_next = response.xpath('//p[@id="page"]//a[re:test(text(),"下一页")]/@href').extract_first()
-        # if url_next is not None:
-        #     # print('这是第%s页***********************************************')
-        #     # 匹配到页码，只抓取10页以内的内容
-        #     pattern_url = re.compile(r'&pn=(\d+)')
-        #     page = pattern_url.findall(url_next)[0]
-        #     if int(page) <= 90:
-        #         url_next = response.urljoin(url_next)
-        #         # print(url_next)
-        #         yield scrapy.Request(
-        #             url_next,
-        #             callback=self.generic_parse
-        #         )
+        # 获取下一页链接
+        url_next = response.xpath('//p[@id="page"]//a[re:test(text(),"下一页")]/@href').extract_first()
+        if url_next is not None:
+            # print('这是第%s页***********************************************')
+            # 匹配到页码，只抓取10页以内的内容
+            pattern_url = re.compile(r'&pn=(\d+)')
+            page = pattern_url.findall(url_next)[0]
+            if int(page) <= 90:
+                url_next = response.urljoin(url_next)
+                yield scrapy.Request(
+                    url_next,
+                    callback=self.brand_parse
+                )
 
     def domain_parse(self, response):
         print('这是域名关键字')
@@ -216,9 +229,10 @@ class InformationSpider(scrapy.Spider):
         url = response.url
         kwd_encode = re.compile(r'\?wd=(.*?)&').findall(url)
         keyword_init = urllib.parse.unquote(kwd_encode[0])
-        keyword = re.sub(r'\+', ' ', keyword_init).split(' ')
-        if keyword[0] == 'site:qq.com':
-            keyword[0] = '腾讯网'
+        print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+        print(keyword_init)
+        keyword = re.sub(r'\+', ' ', keyword_init).replace('site:', '').split(' ')
+        print(keyword)
 
         # print(response.text)
         with open('baidu.html', 'a', encoding='utf8') as f:
@@ -237,10 +251,10 @@ class InformationSpider(scrapy.Spider):
             item['autoId'] = str(num) + str(timed)
 
             # 媒体
-            item['mediaName'] = keyword[0]
+            item['mediaName'] = self.media_dict[keyword[0]]
 
             # 获取网站链接
-            item['sourceWeb'] = info.xpath('./h3[@class="t"]/a/@href').extract_first()
+            item['newsLink'] = info.xpath('./h3[@class="t"]/a/@href').extract_first()
 
             # 获取标题
             title_html = info.xpath('./h3[@class="t"]/a').extract_first()
@@ -264,18 +278,22 @@ class InformationSpider(scrapy.Spider):
             pattern_minute = re.compile(r'<span class=" newTimeFactor_before_abs m">(\d+)分钟前.*?</span>')
             minutes = pattern_minute.findall(content)
             if date:
-                item['newAt'] = date[0]
+                date = date[0].replace('年', '-').replace('月', '-').replace('日', '')
+                item['newsAt'] = date
             elif days:
-                p_days = (datetime.datetime.now() + datetime.timedelta(days=-int(days[0]))).strftime('%Yn%my%dr %H:%M')
-                item['newAt'] = p_days.replace('n', '年').replace('y', '月').replace('r', '日')
+                p_days = (datetime.datetime.now() + datetime.timedelta(days=-int(days[0]))).strftime('%Yn%my%dr %H:%M:%S')
+                # item['newAt'] = p_days.replace('n', '年').replace('y', '月').replace('r', '日')
+                item['newsAt'] = p_days
             elif hours:
-                p_hours = (datetime.datetime.now() + datetime.timedelta(days=-int(hours[0]))).strftime('%Yn%my%dr %H:%M')
-                item['newAt'] = p_hours.replace('n', '年').replace('y', '月').replace('r', '日')
+                p_hours = (datetime.datetime.now() + datetime.timedelta(days=-int(hours[0]))).strftime('%Yn%my%dr %H:%M:%S')
+                # item['newAt'] = p_hours.replace('n', '年').replace('y', '月').replace('r', '日')
+                item['newsAt'] = p_hours
             elif minutes:
-                p_minutes = (datetime.datetime.now() + datetime.timedelta(days=-int(minutes[0]))).strftime('%Yn%my%dr %H:%M')
-                item['newAt'] = p_minutes.replace('n', '年').replace('y', '月').replace('r', '日')
+                p_minutes = (datetime.datetime.now() + datetime.timedelta(days=-int(minutes[0]))).strftime('%Yn%my%dr %H:%M:%s')
+                # item['newAt'] = p_minutes.replace('n', '年').replace('y', '月').replace('r', '日')
+                item['newsAt'] = p_minutes
             else:
-                item['newAt'] = ''
+                item['newsAt'] = ''
 
             # 获取内容,分三种情况，
             pattern_info1 = re.compile(r'<div class="c-abstract">(.*?)</div>', re.S)
@@ -294,41 +312,50 @@ class InformationSpider(scrapy.Spider):
                     item['info'] = re.sub(r'<em>|</em>', '', text3[0].strip())
                 else:
                     pattern_info4 = re.compile(r'<span>视频</span>.*?<p>(.*?)</p><div class="g">', re.S)
+                    print('|||||||||||||||||||||||||||||||||||')
+                    print(content)
                     text4 = pattern_info4.findall(content)
+                    print(text4)
                     item['info'] = re.sub(r'<em>|</em>', '', text4[0].strip())
 
             # 获取图片
             image1 = info.xpath(r'.//a[@class="c-img6"]/img/@src').extract_first()      # 普通图片
             image2 = info.xpath(r'./div/a/img/@src').extract_first()                    # 视频图片
             if image1:
-                item['imageLogo'] = image1
+                item['newsLogo'] = image1
+                item['logoType'] = '1'
             elif image2:
-                item['imageLogo'] = image2
+                item['newsLogo'] = image2
+                item['logoType'] = '2'
             else:
-                item['imageLogo'] = ''
+                item['newsLogo'] = ''
+                item['logoType'] = '0'
 
             # 对应关键字id
-
-
+            item['brandId'] = self.brand_dict.get(keyword[1])
 
             # 判断关键字是否在标题或内容
             if keyword[1] in item['title'] and keyword[1] in item['info']:
-                item['wordPos'] = '3'
+                item['brandPos'] = '3'
             elif keyword[1] in item['title']:
-                item['wordPos'] = '1'
+                item['brandPos'] = '1'
             elif keyword[1] in item['info']:
-                item['wordPos'] = '2'
+                item['brandPos'] = '2'
             else:
                 # 通过requests.get()请求单条资讯url, 判断关键字是否在内容里面
                 try:
-                    resp = requests.get(url=item['sourceWeb'], timeout=5).text
+                    resp = requests.get(url=item['newsLink'], timeout=5).text
                     if keyword[1] in resp:
-                        item['wordPos'] = '2'
+                        item['brandPos'] = '2'
                     else:
-                        item['wordPos'] = '0'
+                        item['brandPos'] = '0'
                 except Exception as e:
-                    item['wordPos'] = '0'
+                    item['brandPos'] = '0'
                     self.logger.info('超时， 请求详情页%s' % e)
+
+            item['fromSrc'] = '2'       # 抓取来源 1: 百度新闻资讯抓取,2: 百度网页抓取，3: 今日头条抓取
+            item['createdAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 创建时间
+            item['updatedAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 更新时间
 
             yield item
         # 获取下一页链接
