@@ -18,15 +18,17 @@ class InfomationItem(scrapy.Item):
 
     info = scrapy.Field()       # 内容
 
-    newsLink = scrapy.Field()      # 文章链接
+    link = scrapy.Field()      # 文章链接
 
     newsAt = scrapy.Field()      # 文章发布时间
 
-    logoType = scrapy.Field()       # 新闻对应类型，0: 无(默认),1: 图片地址, 2：视频地址
+    newsType = scrapy.Field()       # 新闻对应类型，0: 无(默认),1: 图片地址, 2：视频地址
 
-    newsLogo = scrapy.Field()         # 文章包含的图片或视频地址， 如文章未包含媒体信息，则默认为空字符
+    newsLogoUrl = scrapy.Field()         # 文章包含的图片或视频地址， 如文章未包含媒体信息，则默认为空字符
 
     mediaName = scrapy.Field()        # 媒体名称
+
+    mediaType = scrapy.Field()      # 媒体类型
 
     fromSrc = scrapy.Field()        # 抓取来源 1: 百度新闻抓取,2: 百度网页抓取，3: 今日头条抓取
 
@@ -34,7 +36,7 @@ class InfomationItem(scrapy.Item):
 
     autoId = scrapy.Field()         # 对外暴露id
 
-    relateId = scrapy.Field()       # 相关资讯关联id 此id是某一信息表id
+    relatedId = scrapy.Field()       # 相关资讯关联id 此id是某一信息表id
 
     createdAt = scrapy.Field()      # 创建时间
 

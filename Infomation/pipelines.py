@@ -41,19 +41,19 @@ class MysqlPipeline(object):
         data = dict(item)
         keys = ','.join(data.keys())
         values = ','.join(['%s']*len(data))
-        print('*'*90)
+        # print('*'*90)
         sql = "insert into news(%s) values (%s)" % (keys, values)
         # print(sql)
         # print(data.items())
         # print(self.cursor.execute(sql, [v for k, v in data.items()]))
-        print('_______________________________')
+        # print('_______________________________')
         try:
             self.cursor.execute(sql, [v for k, v in data.items()])
             self.db.commit()
             print('处理成功', self.cursor.rowcount, '条数据')
         except Exception as e:
             self.db.rollback()
-            print(e)
+            logger.info(e)
 
         # return item
 

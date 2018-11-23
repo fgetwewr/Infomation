@@ -5,9 +5,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infomation/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infomation/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infomation/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infomation/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infomation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infomation/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infomation/spiders/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infomation/spiders/info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baidu.html" beforeDir="false" afterPath="$PROJECT_DIR$/baidu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infomation/spiders/kwd_exists.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baidu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info/2018-11-09T161335.746623.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info/2018-11-09T161433.744581.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/startScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/startScrapy.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,18 +26,20 @@
     <SUITE FILE_PATH="coverage/Infomation$test.coverage" NAME="test Coverage Results" MODIFIED="1541570839542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Infomation/spiders" />
     <SUITE FILE_PATH="coverage/Infomation$auto_id__1_.coverage" NAME="auto_id (1) Coverage Results" MODIFIED="1542619342437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Infomation$get_keyword__1_.coverage" NAME="get_keyword (1) Coverage Results" MODIFIED="1542619528432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Infomation$startScrapy.coverage" NAME="startScrapy Coverage Results" MODIFIED="1542619591733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Infomation$startScrapy.coverage" NAME="startScrapy Coverage Results" MODIFIED="1542965025147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Infomation$auto_id.coverage" NAME="auto_id Coverage Results" MODIFIED="1541662964003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Infomation/spiders" />
     <SUITE FILE_PATH="coverage/Infomation$get_keyword.coverage" NAME="get_keyword Coverage Results" MODIFIED="1541663122565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Infomation/spiders" />
+    <SUITE FILE_PATH="coverage/Infomation$toutiao.coverage" NAME="toutiao Coverage Results" MODIFIED="1542962354497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Infomation$create_kwd.coverage" NAME="create_kwd Coverage Results" MODIFIED="1542849635366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1428762288">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="18" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
@@ -43,30 +49,31 @@
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="7" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.opened" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="from" value="1" />
-          <entry key="html" value="1" />
+          <entry key="html" value="5" />
           <entry key="json" value="7" />
           <entry key="md" value="2" />
-          <entry key="py" value="74" />
+          <entry key="py" value="77" />
           <entry key="pyi" value="2" />
           <entry key="scrapy" value="1" />
+          <entry key="seen" value="1" />
           <entry key="text" value="4" />
-          <entry key="txt" value="4" />
+          <entry key="txt" value="12" />
           <entry key="百度资讯抓取相关" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="1" />
+          <entry key="HTML" value="5" />
           <entry key="JSON" value="7" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="74" />
+          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="Python" value="77" />
           <entry key="PythonStub" value="2" />
         </counts>
       </usages-collector>
@@ -74,53 +81,30 @@
         <counts>
           <entry key="dummy" value="8" />
           <entry key="json" value="3" />
-          <entry key="py" value="33627" />
+          <entry key="py" value="35833" />
+          <entry key="txt" value="5" />
           <entry key="百度资讯抓取相关" value="119" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="3" />
-          <entry key="PLAIN_TEXT" value="127" />
-          <entry key="Python" value="33576" />
+          <entry key="PLAIN_TEXT" value="132" />
+          <entry key="Python" value="35782" />
           <entry key="SQL" value="51" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.1">
+    <splitter split-orientation="horizontal" split-proportion="0.76886225">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Infomation/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="13">
-                  <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/Desktop/插入数据.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="700">
-                  <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-                  <folding>
-                    <element signature="e#70#85#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="278">
-                  <caret line="155" column="12" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="12" />
-                  <folding>
-                    <element signature="e#0#9#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="128">
+                  <caret line="108" column="55" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="55" />
                 </state>
               </provider>
             </entry>
@@ -128,63 +112,62 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Infomation/spiders/info.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1">
-                  <caret line="205" selection-start-line="203" selection-start-column="12" selection-end-line="205" />
+                <state relative-caret-position="-575">
+                  <caret line="199" column="42" selection-start-line="199" selection-start-column="42" selection-end-line="199" selection-end-column="42" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
-                    <marker date="1542880286283" expanded="true" signature="454:976" ph="..." />
-                    <marker date="1542880286283" expanded="false" signature="1585:1987" ph="..." />
+                    <marker date="1542967087941" expanded="true" signature="454:976" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/generic_key.py">
+            <entry file="file://$PROJECT_DIR$/toutiao.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="100">
-                  <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+                <state relative-caret-position="50">
+                  <caret line="2" selection-start-line="2" selection-end-line="2" />
                   <folding>
-                    <element signature="e#0#13#0" expanded="true" />
+                    <element signature="e#0#15#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/logs.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="77025">
-                  <caret line="3081" column="46" selection-start-line="3081" selection-start-column="46" selection-end-line="3081" selection-end-column="46" />
-                </state>
-              </provider>
+            <entry file="file://$PROJECT_DIR$/toutiao.html">
+              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/startScrapy.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="100">
-                  <caret line="4" selection-start-line="4" selection-end-line="4" />
+                  <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/logs/infoSpiderlog20181123.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-59910">
+                  <caret line="5199" column="93" selection-start-line="5199" selection-start-column="93" selection-end-line="5199" selection-end-column="93" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Infomation/pipelines.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="325">
-                  <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+                <state relative-caret-position="28">
+                  <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
                   <folding>
                     <element signature="e#194#205#0" expanded="true" />
-                    <element signature="e#1854#1904#0" />
-                    <element signature="e#1950#1965#0" />
-                    <element signature="e#2017#2143#0" />
-                    <element signature="e#2180#3458#0" />
-                    <element signature="e#2725#3458#0" />
-                    <marker date="1542880321753" expanded="true" signature="397:1935" ph="..." />
-                    <marker date="1542880321753" expanded="false" signature="1968:1974" ph="..." />
-                    <marker date="1542880321753" expanded="true" signature="2004:2069" ph="..." />
-                    <marker date="1542880321753" expanded="false" signature="2100:2130" ph="..." />
+                    <marker date="1542966974709" expanded="true" signature="397:1945" ph="..." />
+                    <marker date="1542966974709" expanded="false" signature="1978:1984" ph="..." />
+                    <marker date="1542966974709" expanded="true" signature="2014:2079" ph="..." />
+                    <marker date="1542966974709" expanded="false" signature="2110:2140" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -193,25 +176,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Infomation/items.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="444">
-                  <caret line="41" selection-start-line="41" selection-end-line="41" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/create_table.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="287">
-                  <caret line="112" selection-start-line="112" selection-end-line="112" />
-                  <folding>
-                    <element signature="e#0#14#0" expanded="true" />
-                    <element signature="e#547#615#0" />
-                    <marker date="1542875058506" expanded="true" signature="123:147" ph="..." />
-                    <marker date="1542875058506" expanded="true" signature="699:710" ph="..." />
-                    <marker date="1542875058506" expanded="true" signature="699:1262" ph="..." />
-                    <marker date="1542875058506" expanded="true" signature="1824:2344" ph="..." />
-                  </folding>
+                <state relative-caret-position="132">
+                  <caret line="39" selection-start-line="39" selection-end-line="39" />
                 </state>
               </provider>
             </entry>
@@ -219,15 +185,15 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Infomation/spiders/info.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="999">
-                  <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+                <state relative-caret-position="75">
+                  <caret line="46" selection-start-line="41" selection-end-line="46" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
-                    <marker date="1542880286283" expanded="true" signature="454:976" ph="..." />
+                    <marker date="1542967087941" expanded="true" signature="454:976" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -253,7 +219,6 @@
         <option value="$USER_HOME$/Documents/WeChat Files/shuai1509386828/Files/pipelines.py" />
         <option value="$PROJECT_DIR$/Infomation/spiders/test.py" />
         <option value="$PROJECT_DIR$/Infomation/spiders/auto_id.py" />
-        <option value="$PROJECT_DIR$/startScrapy.py" />
         <option value="$USER_HOME$/Desktop/百度资讯抓取相关" />
         <option value="$PROJECT_DIR$/Infomation/spiders/kwd_exists.py" />
         <option value="$PROJECT_DIR$/Infomation/middlewares.py" />
@@ -263,12 +228,15 @@
         <option value="$PROJECT_DIR$/auto_id.py" />
         <option value="$PROJECT_DIR$/domain_key.py" />
         <option value="$PROJECT_DIR$/create_kwd.py" />
-        <option value="$PROJECT_DIR$/Infomation/items.py" />
         <option value="$PROJECT_DIR$/create_table.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/toutiao.py" />
+        <option value="$PROJECT_DIR$/startScrapy.py" />
+        <option value="$PROJECT_DIR$/Infomation/items.py" />
         <option value="$PROJECT_DIR$/Infomation/settings.py" />
-        <option value="$PROJECT_DIR$/Infomation/spiders/info.py" />
         <option value="$PROJECT_DIR$/Infomation/pipelines.py" />
+        <option value="$PROJECT_DIR$/logs/infoSpiderlog20181123.txt" />
+        <option value="$PROJECT_DIR$/Infomation/spiders/info.py" />
       </list>
     </option>
   </component>
@@ -279,10 +247,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="330" />
-    <option name="y" value="11" />
-    <option name="width" value="1506" />
-    <option name="height" value="982" />
+    <option name="x" value="263" />
+    <option name="width" value="1861" />
+    <option name="height" value="920" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -307,6 +274,11 @@
               <item name="Infomation" type="462c0819:PsiDirectoryNode" />
               <item name="Infomation" type="462c0819:PsiDirectoryNode" />
               <item name="spiders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Infomation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Infomation" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -341,29 +313,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test (1)">
-    <configuration name="create_kwd" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Infomation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\xk\PycharmProjects\Infomation\create_table.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.startScrapy">
     <configuration name="create_table" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Infomation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -452,20 +402,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="toutiao" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Infomation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/toutiao.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.test (1)" />
       <item itemvalue="Python.startScrapy" />
-      <item itemvalue="Python.create_kwd" />
       <item itemvalue="Python.create_table" />
       <item itemvalue="Python.pipelines" />
+      <item itemvalue="Python.toutiao" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.startScrapy" />
+        <item itemvalue="Python.toutiao" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.create_table" />
         <item itemvalue="Python.pipelines" />
-        <item itemvalue="Python.create_kwd" />
-        <item itemvalue="Python.startScrapy" />
       </list>
     </recent_temporary>
   </component>
@@ -483,16 +455,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="644" y="39" width="1506" height="982" extended-state="0" />
+    <frame x="95" y="0" width="1861" height="920" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08644537" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16823986" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32762557" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33565623" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39954337" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32580262" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5426573" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39952436" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -500,7 +472,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.27006507" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" visible="true" weight="0.21841794" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" visible="true" weight="0.32484075" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -510,13 +482,13 @@
       <window_info anchor="right" id="Mongo Explorer" order="5" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.075159915" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16823986" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3290993" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29608294" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32580262" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5426573" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39952436" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -524,13 +496,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.27006507" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" visible="true" weight="0.30368763" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" visible="true" weight="0.82802546" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Mongo Explorer" order="5" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,13 +574,6 @@
     <entry file="file://$PROJECT_DIR$/from" />
     <entry file="file://$PROJECT_DIR$/scrapy" />
     <entry file="file://$USER_HOME$/AppData/Roaming/Docker/settings.json" />
-    <entry file="file://$PROJECT_DIR$/Infomation/spiders/kwd_exists.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/xk/Word2Vec-sentiment-master/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -652,11 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baidu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pymysql/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -668,10 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1542677614356" expanded="true" signature="545:556" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,23 +636,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pymysql/cursors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="159" column="19" lean-forward="true" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/re.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="183" column="4" selection-start-line="183" selection-start-column="4" selection-end-line="183" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/datetime.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="228" column="8" selection-start-line="228" selection-start-column="8" selection-end-line="228" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/插入数据.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#70#85#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77025">
-          <caret line="3081" column="46" selection-start-line="3081" selection-start-column="46" selection-end-line="3081" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/startScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -709,103 +680,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pymysql/cursors.py">
+    <entry file="file://$PROJECT_DIR$/logs.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="159" column="19" lean-forward="true" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Infomation/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="77025">
+          <caret line="3081" column="46" selection-start-line="3081" selection-start-column="46" selection-end-line="3081" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/create_table.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
+        <state relative-caret-position="2750">
           <caret line="112" selection-start-line="112" selection-end-line="112" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#547#615#0" />
             <marker date="1542875058506" expanded="true" signature="123:147" ph="..." />
             <marker date="1542875058506" expanded="true" signature="699:710" ph="..." />
-            <marker date="1542875058506" expanded="true" signature="699:1262" ph="..." />
-            <marker date="1542875058506" expanded="true" signature="1824:2344" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/mySpiderlog{startDate}.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="30" column="563" lean-forward="true" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="563" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baidu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450" />
+      </provider>
+      <provider editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-390547" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/mySpiderlog20181123.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2151">
+          <caret line="144" column="66" selection-start-line="144" selection-start-column="66" selection-end-line="144" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawls/storeMyRequest/requests.seen">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toutiao.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toutiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Infomation/spiders/kwd_exists.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="155" column="12" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="12" />
+        <state relative-caret-position="695">
+          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/插入数据.py">
+    <entry file="file://$PROJECT_DIR$/Infomation/items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding>
-            <element signature="e#70#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/re.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="183" column="4" selection-start-line="183" selection-start-column="4" selection-end-line="183" selection-end-column="4" />
+        <state relative-caret-position="132">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Infomation/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/datetime.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="228" column="8" selection-start-line="228" selection-start-column="8" selection-end-line="228" selection-end-column="8" />
+        <state relative-caret-position="128">
+          <caret line="108" column="55" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Infomation/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        <state relative-caret-position="28">
+          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
             <element signature="e#194#205#0" expanded="true" />
-            <element signature="e#1854#1904#0" />
-            <element signature="e#1950#1965#0" />
-            <element signature="e#2017#2143#0" />
-            <element signature="e#2180#3458#0" />
-            <element signature="e#2725#3458#0" />
-            <marker date="1542880321753" expanded="true" signature="397:1935" ph="..." />
-            <marker date="1542880321753" expanded="false" signature="1968:1974" ph="..." />
-            <marker date="1542880321753" expanded="true" signature="2004:2069" ph="..." />
-            <marker date="1542880321753" expanded="false" signature="2100:2130" ph="..." />
+            <marker date="1542966974709" expanded="true" signature="397:1945" ph="..." />
+            <marker date="1542966974709" expanded="false" signature="1978:1984" ph="..." />
+            <marker date="1542966974709" expanded="true" signature="2014:2079" ph="..." />
+            <marker date="1542966974709" expanded="false" signature="2110:2140" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startScrapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Infomation/spiders/info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="999">
-          <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+        <state relative-caret-position="-575">
+          <caret line="199" column="42" selection-start-line="199" selection-start-column="42" selection-end-line="199" selection-end-column="42" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1542880286283" expanded="true" signature="454:976" ph="..." />
+            <marker date="1542967087941" expanded="true" signature="454:976" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/infoSpiderlog20181123.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-59910">
+          <caret line="5199" column="93" selection-start-line="5199" selection-start-column="93" selection-end-line="5199" selection-end-column="93" />
         </state>
       </provider>
     </entry>
