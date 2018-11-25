@@ -8,6 +8,8 @@
 import json
 import pymongo
 import pymysql
+import traceback
+from pymysql.err import IntegrityError, InternalError
 from scrapy.conf import settings
 from pymongo.errors import DuplicateKeyError
 
@@ -50,11 +52,14 @@ class MysqlPipeline(object):
         try:
             self.cursor.execute(sql, [v for k, v in data.items()])
             self.db.commit()
-            print('处理成功', self.cursor.rowcount, '条数据')
+            # print('处理成功', self.cursor.rowcount, '条数据')
+        except InternalError as e:
+            print('不正确的值>>>>>:', item)
+            logger.info(e)
+            traceback.print_exc()
         except Exception as e:
             self.db.rollback()
             logger.info(e)
-
         # return item
 
     def close_spider(self, spider):

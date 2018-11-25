@@ -1,0 +1,1407 @@
+2018-11-25 22:23:29 [scrapy.utils.log] INFO: Scrapy 1.5.1 started (bot: Infomation)
+2018-11-25 22:23:29 [scrapy.utils.log] INFO: Versions: lxml 4.2.5.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.5.1, w3lib 1.19.0, Twisted 18.9.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:57:36) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0i  14 Aug 2018), cryptography 2.3.1, Platform Windows-10-10.0.17134-SP0
+2018-11-25 22:23:29 [scrapy.crawler] INFO: Overridden settings: {'AUTOTHROTTLE_START_DELAY': 1, 'BOT_NAME': 'Infomation', 'COOKIES_ENABLED': False, 'LOG_FILE': 'logs/infoSpiderlog20181125.txt', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'Infomation.spiders', 'SPIDER_MODULES': ['Infomation.spiders'], 'USER_AGENT': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'}
+2018-11-25 22:23:29 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.spiderstate.SpiderState']
+2018-11-25 22:23:29 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'Infomation.middlewares.RandomUserAgent',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-11-25 22:23:29 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-11-25 22:23:29 [scrapy.middleware] INFO: Enabled item pipelines:
+['Infomation.pipelines.MysqlPipeline']
+2018-11-25 22:23:29 [scrapy.core.engine] INFO: Spider opened
+2018-11-25 22:23:29 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-11-25 22:24:32 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-11-25 22:25:27 [Infomation.pipelines] INFO: (1062, "Duplicate entry '4-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_lYqLW-7KzLa' for key 'unique_link'")
+2018-11-25 22:25:36 [scrapy.extensions.logstats] INFO: Crawled 9 pages (at 9 pages/min), scraped 7 items (at 7 items/min)
+2018-11-25 22:26:49 [Infomation.pipelines] INFO: (1062, "Duplicate entry '4-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:26:49 [Infomation.pipelines] INFO: (1062, "Duplicate entry '10-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_fbsY7qCZJy' for key 'unique_link'")
+2018-11-25 22:26:49 [scrapy.extensions.logstats] INFO: Crawled 18 pages (at 9 pages/min), scraped 109 items (at 102 items/min)
+2018-11-25 22:27:52 [Infomation.pipelines] INFO: (1062, "Duplicate entry '4-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoOdkznlr7RfJ' for key 'unique_link'")
+2018-11-25 22:27:52 [Infomation.pipelines] INFO: (1062, "Duplicate entry '5-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoPmDVrgvSWxk' for key 'unique_link'")
+2018-11-25 22:27:52 [Infomation.pipelines] INFO: (1062, "Duplicate entry '9-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_fbsY7qCZJye' for key 'unique_link'")
+2018-11-25 22:27:52 [scrapy.extensions.logstats] INFO: Crawled 18 pages (at 0 pages/min), scraped 144 items (at 35 items/min)
+2018-11-25 22:28:19 [Infomation.pipelines] INFO: (1062, "Duplicate entry '5-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:28:38 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 22:28:38 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 22:28:38 [scrapy.extensions.logstats] INFO: Crawled 18 pages (at 0 pages/min), scraped 154 items (at 10 items/min)
+2018-11-25 22:29:14 [Infomation.pipelines] INFO: (1062, "Duplicate entry '7-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:29:32 [Infomation.pipelines] INFO: (1062, "Duplicate entry '9-http://www.baidu.com/link?url=Zhy6tjzBb2gc71LlGaX6UWoeGA3n7BkW' for key 'unique_link'")
+2018-11-25 22:29:32 [scrapy.extensions.logstats] INFO: Crawled 35 pages (at 17 pages/min), scraped 181 items (at 27 items/min)
+2018-11-25 22:29:51 [Infomation.pipelines] INFO: (1062, "Duplicate entry '9-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:30:00 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoUDcqRNKF1m' for key 'unique_link'")
+2018-11-25 22:30:01 [Infomation.pipelines] INFO: (1062, "Duplicate entry '3-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:30:01 [Infomation.pipelines] INFO: (1062, "Duplicate entry '9-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:31:13 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_e0tNvjGG9r' for key 'unique_link'")
+2018-11-25 22:31:13 [scrapy.extensions.logstats] INFO: Crawled 40 pages (at 5 pages/min), scraped 329 items (at 148 items/min)
+2018-11-25 22:31:40 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw' for key 'unique_link'")
+2018-11-25 22:31:40 [scrapy.extensions.logstats] INFO: Crawled 40 pages (at 0 pages/min), scraped 349 items (at 20 items/min)
+2018-11-25 22:32:16 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw' for key 'unique_link'")
+2018-11-25 22:32:16 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'info' at row 1")
+2018-11-25 22:32:16 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw' for key 'unique_link'")
+2018-11-25 22:32:16 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x8E\\x90\\xF0\\x9F...' for column 'info' at row 1")
+2018-11-25 22:33:20 [scrapy.extensions.logstats] INFO: Crawled 47 pages (at 7 pages/min), scraped 374 items (at 25 items/min)
+2018-11-25 22:33:20 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site:163.com%20%E8%AE%AF%E9%A3%9E&pn=0&ie=utf-8 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 22:33:20 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x9D!....' for column 'info' at row 1")
+2018-11-25 22:33:38 [Infomation.pipelines] INFO: (1062, "Duplicate entry '7-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:33:38 [scrapy.extensions.logstats] INFO: Crawled 48 pages (at 1 pages/min), scraped 397 items (at 23 items/min)
+2018-11-25 22:33:39 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_aandb_CHWv' for key 'unique_link'")
+2018-11-25 22:33:39 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=ws6cxNIhWmVA1gbrUgFMRuITJoVAFtQ' for key 'unique_link'")
+2018-11-25 22:33:39 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKmMFO3p44r_' for key 'unique_link'")
+2018-11-25 22:33:39 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_aandb_CHWv' for key 'unique_link'")
+2018-11-25 22:33:39 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=ws6cxNIhWmVA1gbrUgFMRrfckPcADxb' for key 'unique_link'")
+2018-11-25 22:33:39 [Infomation.pipelines] INFO: (1062, "Duplicate entry '1-http://www.baidu.com/link?url=57aywD0Q6WTnl7XKbIHuEvQhlo3YdqSf' for key 'unique_link'")
+2018-11-25 22:34:51 [scrapy.extensions.logstats] INFO: Crawled 57 pages (at 9 pages/min), scraped 453 items (at 56 items/min)
+2018-11-25 22:35:00 [Infomation.pipelines] INFO: (1062, "Duplicate entry '9-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:35:01 [Infomation.pipelines] INFO: (1062, "Duplicate entry '10-http://www.baidu.com/link?url=Hfx-FhfdpjzGHgKNLj0cwWb8ACyXGy1' for key 'unique_link'")
+2018-11-25 22:35:01 [Infomation.pipelines] INFO: (1062, "Duplicate entry '3-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:35:01 [Infomation.pipelines] INFO: (1062, "Duplicate entry '3-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:35:01 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=fJ5P3mDdJxPJPBMMaMXI66l0fP8pfJW' for key 'unique_link'")
+2018-11-25 22:35:01 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=57aywD0Q6WTnl7XKbIHuEye75zisp8o' for key 'unique_link'")
+2018-11-25 22:35:01 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw' for key 'unique_link'")
+2018-11-25 22:35:01 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x8C\\xBC(\\xE5...' for column 'title' at row 1")
+2018-11-25 22:35:01 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x92\\x84,\\xE9...' for column 'info' at row 1")
+2018-11-25 22:36:14 [scrapy.extensions.logstats] INFO: Crawled 66 pages (at 9 pages/min), scraped 534 items (at 81 items/min)
+2018-11-25 22:36:14 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw' for key 'unique_link'")
+2018-11-25 22:36:23 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw' for key 'unique_link'")
+2018-11-25 22:36:23 [Infomation.pipelines] INFO: (1062, "Duplicate entry '16-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoUDcqRNKF1m' for key 'unique_link'")
+2018-11-25 22:36:23 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoTrD5QREekv' for key 'unique_link'")
+2018-11-25 22:36:23 [Infomation.pipelines] INFO: (1062, "Duplicate entry '8-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKmMFO3p44r_z' for key 'unique_link'")
+2018-11-25 22:36:23 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.baidu.com/s?wd=site%3A163.com%20%E5%B7%B4%E5%A5%B4&pn=20&oq=site%3A163.com%20%E5%B7%B4%E5%A5%B4&ie=utf-8&rsv_pq=81e6cd7b0000b269&rsv_t=9c7fQ6tvR%2BoULcaLk9kw8ZxYquXgB57rF%2BBuNRU6Yj80hhZdsxGO022emrA&rsv_page=1> (referer: https://www.baidu.com/s?wd=site%3A163.com%20%E5%B7%B4%E5%A5%B4&pn=10&oq=site%3A163.com%20%E5%B7%B4%E5%A5%B4&ie=utf-8&rsv_pq=e74d75490000a76d&rsv_t=b94c1TUwshDfh8ot0F8tGW3wjxaOqaqWvQyPs8jf3dNXznHsc%2BBrU4yN2ZI&rsv_page=1)
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Pycharm\xk\Infomation\Infomation\spiders\info.py", line 256, in domain_parse
+    title = pattern1.findall(title_html)
+TypeError: expected string or bytes-like object
+2018-11-25 22:36:23 [Infomation.pipelines] INFO: (1062, "Duplicate entry '9-http://www.baidu.com/link?url=gO7UsA_Q5oAGHPW8WiI5Dy5nyUsu-A5k' for key 'unique_link'")
+2018-11-25 22:36:23 [Infomation.pipelines] INFO: (1062, "Duplicate entry '1-http://www.baidu.com/link?url=bQLDt5r-VYz3-_s57DWkzkEaTKSToiu8' for key 'unique_link'")
+2018-11-25 22:36:23 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=57aywD0Q6WTnl7XKbIHuEzg3thMUswU' for key 'unique_link'")
+2018-11-25 22:36:23 [Infomation.pipelines] INFO: (1062, "Duplicate entry '8-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKcRz5ImZR7V4' for key 'unique_link'")
+2018-11-25 22:36:33 [scrapy.extensions.logstats] INFO: Crawled 74 pages (at 8 pages/min), scraped 618 items (at 84 items/min)
+2018-11-25 22:37:36 [Infomation.pipelines] INFO: (1062, "Duplicate entry '7-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:37:36 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_bvn6U6_yF6' for key 'unique_link'")
+2018-11-25 22:37:36 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=ws6cxNIhWmVA1gbrUgFMRrfckPcADxb' for key 'unique_link'")
+2018-11-25 22:37:36 [scrapy.extensions.logstats] INFO: Crawled 75 pages (at 1 pages/min), scraped 626 items (at 8 items/min)
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKfE58nQWKRT' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=fJ5P3mDdJxPJPBMMaMXI66l0fP8pfJW' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=57aywD0Q6WTnl7XKbIHuEzg3thMUswU' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\xA4\\x94_\\xE5...' for column 'title' at row 1")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=Zhy6tjzBb2gc71LlGaX6UW-CgnZitC4' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=Hfx-FhfdpjzGHgKNLj0cwOcVYLmaWWo' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_iN3b-ROeTt' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKkOaMkW4azc' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=ws6cxNIhWmVA1gbrUgFMRuRuBTVJWFA' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '8-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoPmDVrgvSWxk' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '15-http://www.baidu.com/link?url=fJ5P3mDdJxPJPBMMaMXI66l0fP8pfJW' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKfojw8N401M' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '15-http://www.baidu.com/link?url=Hfx-FhfdpjzGHgKNLj0cwOGwJKSGnHY' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKdam3_qpj3h' for key 'unique_link'")
+2018-11-25 22:37:45 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoSPlh3RU3MO' for key 'unique_link'")
+2018-11-25 22:38:58 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=57aywD0Q6WTnl7XKbIHuEye75zisp8o' for key 'unique_link'")
+2018-11-25 22:38:58 [scrapy.extensions.logstats] INFO: Crawled 83 pages (at 8 pages/min), scraped 700 items (at 74 items/min)
+2018-11-25 22:38:58 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_h0F21jRjfA' for key 'unique_link'")
+2018-11-25 22:38:58 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=ws6cxNIhWmVA1gbrUgFMR-bHoGeyvsW' for key 'unique_link'")
+2018-11-25 22:38:58 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_aandb_CHWv' for key 'unique_link'")
+2018-11-25 22:38:58 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=V3XjRzifgSVzhRmUVntzCbz9vIO6u7s' for key 'unique_link'")
+2018-11-25 22:38:58 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_fbsY7qCZJy' for key 'unique_link'")
+2018-11-25 22:38:58 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKdam3_qpj3h' for key 'unique_link'")
+2018-11-25 22:38:58 [Infomation.pipelines] INFO: (1062, "Duplicate entry '3-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw9' for key 'unique_link'")
+2018-11-25 22:39:07 [Infomation.pipelines] INFO: (1062, "Duplicate entry '10-http://www.baidu.com/link?url=Zhy6tjzBb2gc71LlGaX6UTX8pIOo5gh' for key 'unique_link'")
+2018-11-25 22:39:07 [Infomation.pipelines] INFO: (1062, "Duplicate entry '10-http://www.baidu.com/link?url=bQLDt5r-VYz3-_s57DWkza6qJvk3xqS' for key 'unique_link'")
+2018-11-25 22:39:07 [Infomation.pipelines] INFO: (1062, "Duplicate entry '3-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoOdkznlr7RfJ' for key 'unique_link'")
+2018-11-25 22:39:07 [Infomation.pipelines] INFO: (1062, "Duplicate entry '10-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKmMFO3p44r_' for key 'unique_link'")
+2018-11-25 22:39:07 [Infomation.pipelines] INFO: (1062, "Duplicate entry '10-http://www.baidu.com/link?url=ws6cxNIhWmVA1gbrUgFMRqGcirQoTRV' for key 'unique_link'")
+2018-11-25 22:39:08 [Infomation.pipelines] INFO: (1062, "Duplicate entry '10-http://www.baidu.com/link?url=gO7UsA_Q5oAGHPW8WiI5Dy5nyUsu-A5' for key 'unique_link'")
+2018-11-25 22:39:08 [Infomation.pipelines] INFO: (1062, "Duplicate entry '1-http://www.baidu.com/link?url=Hfx-FhfdpjzGHgKNLj0cwWb8ACyXGy1P' for key 'unique_link'")
+2018-11-25 22:40:20 [scrapy.extensions.logstats] INFO: Crawled 93 pages (at 10 pages/min), scraped 782 items (at 82 items/min)
+2018-11-25 22:40:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.baidu.com/s?wd=site%3A163.com%20%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90&pn=20&oq=site%3A163.com%20%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90&ie=utf-8&rsv_pq=e65e71e80000c5fa&rsv_t=84f5r6I3LBajBD9nGvWHuD0LP%2FsGS4wrhIbwyzNR1st8dN7%2F2Ze8GywYcFU&rsv_page=1> (referer: https://www.baidu.com/s?wd=site%3A163.com%20%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90&pn=10&oq=site%3A163.com%20%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90&ie=utf-8&rsv_pq=821ddef00000b2a3&rsv_t=a0dcKutQwP8ZGRQl7hau2h6hD4%2Fe0km6O%2BCfhYhwLyauY%2F1dICmoF9T4H78&rsv_page=1)
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Pycharm\xk\Infomation\Infomation\spiders\info.py", line 339, in domain_parse
+    if keyword[1] in item['title'] and keyword[1] in item['info']:
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\item.py", line 59, in __getitem__
+    return self._values[key]
+KeyError: 'info'
+2018-11-25 22:40:29 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoOdkznlr7Rf' for key 'unique_link'")
+2018-11-25 22:40:29 [scrapy.extensions.logstats] INFO: Crawled 93 pages (at 0 pages/min), scraped 807 items (at 25 items/min)
+2018-11-25 22:41:42 [Infomation.pipelines] INFO: (1062, "Duplicate entry '15-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_lYqLW-7KzL' for key 'unique_link'")
+2018-11-25 22:41:42 [scrapy.extensions.logstats] INFO: Crawled 102 pages (at 9 pages/min), scraped 863 items (at 56 items/min)
+2018-11-25 22:41:42 [Infomation.pipelines] INFO: (1062, "Duplicate entry '15-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_bOSTIZNUgB' for key 'unique_link'")
+2018-11-25 22:41:42 [Infomation.pipelines] INFO: (1062, "Duplicate entry '15-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKfojw8N401M' for key 'unique_link'")
+2018-11-25 22:41:42 [Infomation.pipelines] INFO: (1062, "Duplicate entry '8-http://www.baidu.com/link?url=fvGSBq5NeKyy7mgnEN4MddvB5b4XOzhp' for key 'unique_link'")
+2018-11-25 22:41:52 [Infomation.pipelines] INFO: (1062, "Duplicate entry '15-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_aandb_CHWv' for key 'unique_link'")
+2018-11-25 22:41:52 [Infomation.pipelines] INFO: (1062, "Duplicate entry '8-http://www.baidu.com/link?url=fJKL_Eo5hdGojfBzE-Nd_myQSUt9AtVA' for key 'unique_link'")
+2018-11-25 22:43:04 [scrapy.extensions.logstats] INFO: Crawled 110 pages (at 8 pages/min), scraped 953 items (at 90 items/min)
+2018-11-25 22:43:04 [Infomation.pipelines] INFO: (1062, "Duplicate entry '10-http://www.baidu.com/link?url=bQLDt5r-VYz3-_s57DWkzmI2qLkptbx' for key 'unique_link'")
+2018-11-25 22:43:13 [Infomation.pipelines] INFO: (1062, "Duplicate entry '10-http://www.baidu.com/link?url=V3XjRzifgSVzhRmUVntzCgX3RK9WR-f' for key 'unique_link'")
+2018-11-25 22:43:14 [Infomation.pipelines] INFO: (1062, "Duplicate entry '3-http://www.baidu.com/link?url=bQLDt5r-VYz3-_s57DWkzmu-dhnrrAwD' for key 'unique_link'")
+2018-11-25 22:43:14 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x8C\\x9F\\xF0\\x9F...' for column 'info' at row 1")
+2018-11-25 22:43:14 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x99\\x83 \\xE8...' for column 'info' at row 1")
+2018-11-25 22:44:26 [scrapy.extensions.logstats] INFO: Crawled 120 pages (at 10 pages/min), scraped 1040 items (at 87 items/min)
+2018-11-25 22:44:27 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\xA8\\xE5\\x91...' for column 'info' at row 1")
+2018-11-25 22:44:36 [scrapy.extensions.logstats] INFO: Crawled 120 pages (at 0 pages/min), scraped 1068 items (at 28 items/min)
+2018-11-25 22:44:36 [Infomation.pipelines] INFO: (1062, "Duplicate entry '14-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw' for key 'unique_link'")
+2018-11-25 22:45:49 [scrapy.extensions.logstats] INFO: Crawled 129 pages (at 9 pages/min), scraped 1130 items (at 62 items/min)
+2018-11-25 22:47:11 [scrapy.extensions.logstats] INFO: Crawled 138 pages (at 9 pages/min), scraped 1220 items (at 90 items/min)
+2018-11-25 22:47:30 [scrapy.extensions.logstats] INFO: Crawled 146 pages (at 8 pages/min), scraped 1309 items (at 89 items/min)
+2018-11-25 22:48:33 [scrapy.extensions.logstats] INFO: Crawled 147 pages (at 1 pages/min), scraped 1310 items (at 1 items/min)
+2018-11-25 22:48:43 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x92\\x96\\xF0\\x9F...' for column 'title' at row 1")
+2018-11-25 22:49:55 [scrapy.extensions.logstats] INFO: Crawled 156 pages (at 9 pages/min), scraped 1400 items (at 90 items/min)
+2018-11-25 22:51:18 [scrapy.extensions.logstats] INFO: Crawled 164 pages (at 8 pages/min), scraped 1490 items (at 90 items/min)
+2018-11-25 22:51:37 [scrapy.extensions.logstats] INFO: Crawled 173 pages (at 9 pages/min), scraped 1579 items (at 89 items/min)
+2018-11-25 22:52:40 [scrapy.extensions.logstats] INFO: Crawled 174 pages (at 1 pages/min), scraped 1580 items (at 1 items/min)
+2018-11-25 22:54:02 [scrapy.extensions.logstats] INFO: Crawled 183 pages (at 9 pages/min), scraped 1670 items (at 90 items/min)
+2018-11-25 22:54:12 [Infomation.pipelines] INFO: (1406, "Data too long for column 'link' at row 1")
+2018-11-25 22:54:12 [Infomation.pipelines] INFO: (1406, "Data too long for column 'link' at row 1")
+2018-11-25 22:54:12 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x92\\xB0:r...' for column 'info' at row 1")
+2018-11-25 22:55:25 [scrapy.extensions.logstats] INFO: Crawled 192 pages (at 9 pages/min), scraped 1760 items (at 90 items/min)
+2018-11-25 22:55:34 [scrapy.extensions.logstats] INFO: Crawled 192 pages (at 0 pages/min), scraped 1772 items (at 12 items/min)
+2018-11-25 22:56:47 [scrapy.extensions.logstats] INFO: Crawled 201 pages (at 9 pages/min), scraped 1847 items (at 75 items/min)
+2018-11-25 22:58:09 [scrapy.extensions.logstats] INFO: Crawled 210 pages (at 9 pages/min), scraped 1935 items (at 88 items/min)
+2018-11-25 22:58:09 [Infomation.pipelines] INFO: (1406, "Data too long for column 'link' at row 1")
+2018-11-25 22:58:09 [Infomation.pipelines] INFO: (1406, "Data too long for column 'link' at row 1")
+2018-11-25 22:58:09 [Infomation.pipelines] INFO: (1406, "Data too long for column 'link' at row 1")
+2018-11-25 22:58:18 [Infomation.pipelines] INFO: (1062, "Duplicate entry '11-http://www.baidu.com/link?url=t-0eA8AGGRWQ_MQpHfqZxFC1oZb4zVT' for key 'unique_link'")
+2018-11-25 22:59:31 [scrapy.extensions.logstats] INFO: Crawled 218 pages (at 8 pages/min), scraped 2025 items (at 90 items/min)
+2018-11-25 22:59:31 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x94\\xA5.....' for column 'info' at row 1")
+2018-11-25 22:59:41 [Infomation.pipelines] INFO: (1366, "Incorrect string value: '\\xF0\\x9F\\x8C\\xB8\\xE3\\x80...' for column 'info' at row 1")
+2018-11-25 23:00:53 [scrapy.extensions.logstats] INFO: Crawled 228 pages (at 10 pages/min), scraped 2115 items (at 90 items/min)
+2018-11-25 23:02:06 [scrapy.extensions.logstats] INFO: Crawled 237 pages (at 9 pages/min), scraped 2205 items (at 90 items/min)
+2018-11-25 23:02:25 [Infomation.pipelines] INFO: (1062, "Duplicate entry '13-http://www.baidu.com/link?url=dG930Wgj8gRWERgRMXzzoRLhmmMYtDw' for key 'unique_link'")
+2018-11-25 23:02:35 [scrapy.extensions.logstats] INFO: Crawled 245 pages (at 8 pages/min), scraped 2293 items (at 88 items/min)
+2018-11-25 23:03:38 [scrapy.extensions.logstats] INFO: Crawled 246 pages (at 1 pages/min), scraped 2320 items (at 27 items/min)
+2018-11-25 23:04:33 [scrapy.extensions.logstats] INFO: Crawled 260 pages (at 14 pages/min), scraped 2393 items (at 73 items/min)
+2018-11-25 23:05:56 [scrapy.extensions.logstats] INFO: Crawled 270 pages (at 10 pages/min), scraped 2556 items (at 163 items/min)
+2018-11-25 23:06:50 [scrapy.extensions.logstats] INFO: Crawled 270 pages (at 0 pages/min), scraped 2587 items (at 31 items/min)
+2018-11-25 23:07:36 [scrapy.extensions.logstats] INFO: Crawled 277 pages (at 7 pages/min), scraped 2595 items (at 8 items/min)
+2018-11-25 23:08:31 [scrapy.extensions.logstats] INFO: Crawled 291 pages (at 14 pages/min), scraped 2668 items (at 73 items/min)
+2018-11-25 23:09:44 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site:people.com.cn%20%E5%B0%8F%E9%BE%99%E5%9D%8E&pn=0&ie=utf-8 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 23:09:44 [scrapy.extensions.logstats] INFO: Crawled 294 pages (at 3 pages/min), scraped 2758 items (at 90 items/min)
+2018-11-25 23:10:56 [scrapy.extensions.logstats] INFO: Crawled 294 pages (at 0 pages/min), scraped 2797 items (at 39 items/min)
+2018-11-25 23:11:33 [scrapy.extensions.logstats] INFO: Crawled 296 pages (at 2 pages/min), scraped 2829 items (at 32 items/min)
+2018-11-25 23:12:00 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Aqq.com%20%E9%A9%AC%E5%85%8B%E5%8D%8E%E8%8F%B2&pn=30&oq=site%3Aqq.com%20%E9%A9%AC%E5%85%8B%E5%8D%8E%E8%8F%B2&ie=utf-8&rsv_pq=8c3792de0000f5b3&rsv_t=2104z2%2B%2FoHwjWiN4GoP7%2FYKtJmYUrDGygdBHgdun5V7x9q%2FdYw1w6iVigdM&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 23:12:19 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Aqq.com%20%E8%AE%AF%E9%A3%9E&pn=20&oq=site%3Aqq.com%20%E8%AE%AF%E9%A3%9E&ie=utf-8&rsv_pq=d79880f30000f9a7&rsv_t=6fd9xF3kHba5DWwLiTMobdsO4sw3mvdgtpBJ2pRjHpauIr8lG4LaBaSPmmQ&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 23:12:19 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Aqq.com%20%E5%85%B0%E8%94%BB&pn=20&oq=site%3Aqq.com%20%E5%85%B0%E8%94%BB&ie=utf-8&rsv_pq=d5b9671500011ed0&rsv_t=189djmaGF2MTuz6sxblV%2BUegc0J9cWULvJHJNp90CkyQhuHjshPqp4JrbZ4&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 23:12:37 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Aqq.com%20%E4%B8%89%E5%8F%AA%E6%9D%BE%E9%BC%A0&pn=80&oq=site%3Aqq.com%20%E4%B8%89%E5%8F%AA%E6%9D%BE%E9%BC%A0&ie=utf-8&rsv_pq=d5b9671500011ecf&rsv_t=f5e8pIo7QWrxc8GESczpRq6RoMp8jadOR%2F%2BcEuy%2BjyTKIqGRDduPuAjmKxc&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 23:12:37 [scrapy.extensions.logstats] INFO: Crawled 302 pages (at 6 pages/min), scraped 2855 items (at 26 items/min)
+2018-11-25 23:12:37 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Apeople.com.cn%20%E5%B0%8F%E7%BA%A2%E4%B9%A6&pn=10&oq=site%3Apeople.com.cn%20%E5%B0%8F%E7%BA%A2%E4%B9%A6&ie=utf-8&rsv_pq=d79880f30000f9a6&rsv_t=eaaff9PruGXJ9lcEf2ViMYvGAlSwmGfFhckDb125iCOcLeq%2BVhhUg2AJeAI&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 23:13:04 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site:xinhuanet.com%20%E8%BD%AF%E6%96%87%E8%A1%97&pn=0&ie=utf-8 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 23:13:40 [scrapy.extensions.logstats] INFO: Crawled 305 pages (at 3 pages/min), scraped 2890 items (at 35 items/min)
+2018-11-25 23:14:35 [scrapy.extensions.logstats] INFO: Crawled 313 pages (at 8 pages/min), scraped 2920 items (at 30 items/min)
+2018-11-25 23:15:30 [scrapy.extensions.logstats] INFO: Crawled 322 pages (at 9 pages/min), scraped 3001 items (at 81 items/min)
+2018-11-25 23:16:34 [scrapy.extensions.logstats] INFO: Crawled 324 pages (at 2 pages/min), scraped 3045 items (at 44 items/min)
+2018-11-25 23:17:56 [scrapy.extensions.logstats] INFO: Crawled 333 pages (at 9 pages/min), scraped 3095 items (at 50 items/min)
+2018-11-25 23:19:18 [scrapy.extensions.logstats] INFO: Crawled 342 pages (at 9 pages/min), scraped 3184 items (at 89 items/min)
+2018-11-25 23:19:37 [scrapy.extensions.logstats] INFO: Crawled 350 pages (at 8 pages/min), scraped 3250 items (at 66 items/min)
+2018-11-25 23:20:32 [scrapy.extensions.logstats] INFO: Crawled 351 pages (at 1 pages/min), scraped 3257 items (at 7 items/min)
+2018-11-25 23:22:03 [scrapy.extensions.logstats] INFO: Crawled 359 pages (at 8 pages/min), scraped 3330 items (at 73 items/min)
+2018-11-25 23:23:25 [scrapy.extensions.logstats] INFO: Crawled 369 pages (at 10 pages/min), scraped 3411 items (at 81 items/min)
+2018-11-25 23:23:34 [scrapy.extensions.logstats] INFO: Crawled 369 pages (at 0 pages/min), scraped 3433 items (at 22 items/min)
+2018-11-25 23:24:29 [scrapy.extensions.logstats] INFO: Crawled 379 pages (at 10 pages/min), scraped 3482 items (at 49 items/min)
+2018-11-25 23:26:19 [scrapy.extensions.logstats] INFO: Crawled 388 pages (at 9 pages/min), scraped 3570 items (at 88 items/min)
+2018-11-25 23:26:29 [scrapy.extensions.logstats] INFO: Crawled 388 pages (at 0 pages/min), scraped 3649 items (at 79 items/min)
+2018-11-25 23:27:32 [scrapy.extensions.logstats] INFO: Crawled 397 pages (at 9 pages/min), scraped 3650 items (at 1 items/min)
+2018-11-25 23:27:41 [Infomation.pipelines] INFO: (1062, "Duplicate entry '1-http://www.baidu.com/link?url=seUzu-w-TEYsSLforsBdKeiSUaypnNvG' for key 'unique_link'")
+2018-11-25 23:28:45 [scrapy.extensions.logstats] INFO: Crawled 406 pages (at 9 pages/min), scraped 3715 items (at 65 items/min)
+2018-11-25 23:30:26 [scrapy.extensions.logstats] INFO: Crawled 415 pages (at 9 pages/min), scraped 3805 items (at 90 items/min)
+2018-11-25 23:30:35 [scrapy.extensions.logstats] INFO: Crawled 415 pages (at 0 pages/min), scraped 3815 items (at 10 items/min)
+2018-11-25 23:31:39 [scrapy.extensions.logstats] INFO: Crawled 425 pages (at 10 pages/min), scraped 3884 items (at 69 items/min)
+2018-11-25 23:32:34 [scrapy.extensions.logstats] INFO: Crawled 434 pages (at 9 pages/min), scraped 3980 items (at 96 items/min)
+2018-11-25 23:33:38 [scrapy.extensions.logstats] INFO: Crawled 436 pages (at 2 pages/min), scraped 3992 items (at 12 items/min)
+2018-11-25 23:33:47 [Infomation.pipelines] INFO: (1062, "Duplicate entry '16-http://www.baidu.com/link?url=Zhy6tjzBb2gc71LlGaX6UK-XX6PBkvD' for key 'unique_link'")
+2018-11-25 23:33:47 [Infomation.pipelines] INFO: (1062, "Duplicate entry '16-http://www.baidu.com/link?url=Zhy6tjzBb2gc71LlGaX6UK-XX6PBkvD' for key 'unique_link'")
+2018-11-25 23:35:00 [scrapy.extensions.logstats] INFO: Crawled 444 pages (at 8 pages/min), scraped 4080 items (at 88 items/min)
+2018-11-25 23:35:55 [scrapy.extensions.logstats] INFO: Crawled 453 pages (at 9 pages/min), scraped 4137 items (at 57 items/min)
+2018-11-25 23:36:22 [Infomation.pipelines] INFO: (1062, "Duplicate entry '15-http://www.baidu.com/link?url=ws6cxNIhWmVA1gbrUgFMRqHI2A8k3lC' for key 'unique_link'")
+2018-11-25 23:36:32 [scrapy.extensions.logstats] INFO: Crawled 454 pages (at 1 pages/min), scraped 4197 items (at 60 items/min)
+2018-11-25 23:37:44 [scrapy.extensions.logstats] INFO: Crawled 463 pages (at 9 pages/min), scraped 4227 items (at 30 items/min)
+2018-11-25 23:39:06 [scrapy.extensions.logstats] INFO: Crawled 472 pages (at 9 pages/min), scraped 4316 items (at 89 items/min)
+2018-11-25 23:40:29 [scrapy.extensions.logstats] INFO: Crawled 481 pages (at 9 pages/min), scraped 4400 items (at 84 items/min)
+2018-11-25 23:40:38 [scrapy.extensions.logstats] INFO: Crawled 481 pages (at 0 pages/min), scraped 4421 items (at 21 items/min)
+2018-11-25 23:41:33 [scrapy.extensions.logstats] INFO: Crawled 490 pages (at 9 pages/min), scraped 4474 items (at 53 items/min)
+2018-11-25 23:43:04 [scrapy.extensions.logstats] INFO: Crawled 498 pages (at 8 pages/min), scraped 4564 items (at 90 items/min)
+2018-11-25 23:43:41 [scrapy.extensions.logstats] INFO: Crawled 507 pages (at 9 pages/min), scraped 4648 items (at 84 items/min)
+2018-11-25 23:44:36 [scrapy.extensions.logstats] INFO: Crawled 509 pages (at 2 pages/min), scraped 4660 items (at 12 items/min)
+2018-11-25 23:45:58 [scrapy.extensions.logstats] INFO: Crawled 517 pages (at 8 pages/min), scraped 4742 items (at 82 items/min)
+2018-11-25 23:47:02 [scrapy.extensions.logstats] INFO: Crawled 527 pages (at 10 pages/min), scraped 4820 items (at 78 items/min)
+2018-11-25 23:47:29 [scrapy.extensions.logstats] INFO: Crawled 527 pages (at 0 pages/min), scraped 4853 items (at 33 items/min)
+2018-11-25 23:48:42 [scrapy.extensions.logstats] INFO: Crawled 536 pages (at 9 pages/min), scraped 4888 items (at 35 items/min)
+2018-11-25 23:49:56 [scrapy.extensions.logstats] INFO: Crawled 545 pages (at 9 pages/min), scraped 4964 items (at 76 items/min)
+2018-11-25 23:50:33 [scrapy.extensions.logstats] INFO: Crawled 553 pages (at 8 pages/min), scraped 5052 items (at 88 items/min)
+2018-11-25 23:51:36 [scrapy.extensions.logstats] INFO: Crawled 554 pages (at 1 pages/min), scraped 5082 items (at 30 items/min)
+2018-11-25 23:52:31 [scrapy.extensions.logstats] INFO: Crawled 569 pages (at 15 pages/min), scraped 5144 items (at 62 items/min)
+2018-11-25 23:54:12 [scrapy.extensions.logstats] INFO: Crawled 578 pages (at 9 pages/min), scraped 5280 items (at 136 items/min)
+2018-11-25 23:54:30 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 23:54:30 [scrapy.extensions.logstats] INFO: Crawled 578 pages (at 0 pages/min), scraped 5292 items (at 12 items/min)
+2018-11-25 23:55:33 [scrapy.extensions.logstats] INFO: Crawled 578 pages (at 0 pages/min), scraped 5300 items (at 8 items/min)
+2018-11-25 23:56:38 [scrapy.extensions.logstats] INFO: Crawled 600 pages (at 22 pages/min), scraped 5398 items (at 98 items/min)
+2018-11-25 23:57:59 [scrapy.extensions.logstats] INFO: Crawled 600 pages (at 0 pages/min), scraped 5442 items (at 44 items/min)
+2018-11-25 23:58:36 [scrapy.extensions.logstats] INFO: Crawled 600 pages (at 0 pages/min), scraped 5458 items (at 16 items/min)
+2018-11-25 23:58:54 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-25 23:59:30 [scrapy.extensions.logstats] INFO: Crawled 609 pages (at 9 pages/min), scraped 5461 items (at 3 items/min)
+2018-11-26 00:00:44 [scrapy.extensions.logstats] INFO: Crawled 623 pages (at 14 pages/min), scraped 5588 items (at 127 items/min)
+2018-11-26 00:01:38 [scrapy.extensions.logstats] INFO: Crawled 623 pages (at 0 pages/min), scraped 5624 items (at 36 items/min)
+2018-11-26 00:02:32 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:02:32 [scrapy.extensions.logstats] INFO: Crawled 623 pages (at 0 pages/min), scraped 5642 items (at 18 items/min)
+2018-11-26 00:03:29 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Achina.com.cn%20%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90&pn=70&oq=site%3Achina.com.cn%20%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90&ie=utf-8&rsv_pq=e1f31d750001b941&rsv_t=cc09XSgd3H6ewPzlxuj81itS6gNohhDeg7lxI016ZhqWsV0WVZBpmBV7HZA&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:03:29 [scrapy.extensions.logstats] INFO: Crawled 628 pages (at 5 pages/min), scraped 5682 items (at 40 items/min)
+2018-11-26 00:03:38 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Achina.com.cn%20%E8%AE%AF%E9%A3%9E&pn=50&oq=site%3Achina.com.cn%20%E8%AE%AF%E9%A3%9E&ie=utf-8&rsv_pq=85b490e80001a074&rsv_t=5f7aWlTlCd7fow65XUYnR1XKKHA9cFn3TxbQixAyVZLTL8Yb7Mo7nUexEVg&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:03:57 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site:chinadaily.com.cn%20%E5%85%B0%E8%94%BB&pn=0&ie=utf-8 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:03:57 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Acri.cn%20%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90&pn=20&oq=site%3Acri.cn%20%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90&ie=utf-8&rsv_pq=dca8e3aa00017c34&rsv_t=86a4re9R4JVBzg1wZ7XH3Wf%2BJGFT0khlDQQPGFQzlQrhmKJxIFpQ07RG%2FqM&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:04:06 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Achina.com%20%E6%B5%B7%E5%BA%95%E6%8D%9E&pn=50&oq=site%3Achina.com%20%E6%B5%B7%E5%BA%95%E6%8D%9E&ie=utf-8&rsv_pq=975502c500016c9a&rsv_t=6b1cMZsCAyGXCQRp7HxeHwy1W3peQo9bts1rfhn0EMxtkE8rUPsutfBO5kU&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:04:15 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Achina.com%20%E8%AE%AF%E9%A3%9E&pn=30&oq=site%3Achina.com%20%E8%AE%AF%E9%A3%9E&ie=utf-8&rsv_pq=ff58bf71000189dc&rsv_t=1595iDX0wGykxJmp8njlfEOGhUBVqltBkUN9hcwoOC8n1myWiwjTZpKILVw&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:04:24 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Achina.com%20%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90&pn=40&oq=site%3Achina.com%20%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90&ie=utf-8&rsv_pq=9056d5a500017a12&rsv_t=640c7td%2Fc5h3kVlh0RH%2FAnLwcCQoHeG%2FqbGRLFFiCrUfUA0qfBaFpYZtl54&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:04:33 [scrapy.extensions.logstats] INFO: Crawled 631 pages (at 3 pages/min), scraped 5696 items (at 14 items/min)
+2018-11-26 00:05:46 [scrapy.extensions.logstats] INFO: Crawled 646 pages (at 15 pages/min), scraped 5732 items (at 36 items/min)
+2018-11-26 00:06:32 [scrapy.extensions.logstats] INFO: Crawled 654 pages (at 8 pages/min), scraped 5795 items (at 63 items/min)
+2018-11-26 00:07:44 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:07:44 [scrapy.extensions.logstats] INFO: Crawled 656 pages (at 2 pages/min), scraped 5850 items (at 55 items/min)
+2018-11-26 00:08:48 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:08:48 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:08:48 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:08:48 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:08:48 [scrapy.extensions.logstats] INFO: Crawled 656 pages (at 0 pages/min), scraped 5872 items (at 22 items/min)
+2018-11-26 00:09:06 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:09:06 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:09:06 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:09:06 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:09:42 [scrapy.extensions.logstats] INFO: Crawled 656 pages (at 0 pages/min), scraped 5875 items (at 3 items/min)
+2018-11-26 00:10:37 [scrapy.extensions.logstats] INFO: Crawled 673 pages (at 17 pages/min), scraped 5887 items (at 12 items/min)
+2018-11-26 00:11:41 [scrapy.extensions.logstats] INFO: Crawled 677 pages (at 4 pages/min), scraped 6001 items (at 114 items/min)
+2018-11-26 00:13:03 [scrapy.extensions.logstats] INFO: Crawled 677 pages (at 0 pages/min), scraped 6011 items (at 10 items/min)
+2018-11-26 00:13:21 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:13:30 [scrapy.extensions.logstats] INFO: Crawled 677 pages (at 0 pages/min), scraped 6012 items (at 1 items/min)
+2018-11-26 00:14:16 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site:cnr.cn%20%E4%B8%89%E5%8F%AA%E6%9D%BE%E9%BC%A0&pn=0&ie=utf-8 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:14:25 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Ace.cn%20%E6%B5%B7%E5%BA%95%E6%8D%9E&pn=40&oq=site%3Ace.cn%20%E6%B5%B7%E5%BA%95%E6%8D%9E&ie=utf-8&rsv_pq=c5b090500001788f&rsv_t=19aempJPcptx%2Bqh3F7S%2Fblul94h%2Fw3hGp1YIbmO2UlB9xDEhy1%2FkPSA8Mys&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4
+2018-11-26 00:14:34 [scrapy.extensions.logstats] INFO: Crawled 696 pages (at 19 pages/min), scraped 6076 items (at 64 items/min)
+2018-11-26 00:14:34 [scrapy.core.engine] INFO: Error while handling downloader output
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\python\failure.py", line 491, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.baidu.com/s?wd=site%3Acri.cn%20%E8%AE%AF%E9%A3%9E&pn=50&oq=site%3Acri.cn%20%E8%AE%AF%E9%A3%9E&ie=utf-8&rsv_pq=dc7dc20300017cf6&rsv_t=2d4fQdVkVSjiPlrxoCpo87mkFVJzckOzQCqCcdWpezOvYllj5cQ9vmGzYP8&rsv_page=1 took longer than 180.0 seconds..
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 171, in _handle_downloader_output
+    self.crawl(response, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 210, in crawl
+    self.schedule(request, spider)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\engine.py", line 216, in schedule
+    if not self.slot.scheduler.enqueue_request(request):
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 57, in enqueue_request
+    dqok = self._dqpush(request)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 86, in _dqpush
+    self.dqs.push(reqd, -request.priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\pqueue.py", line 33, in push
+    self.queues[priority] = self.qfactory(priority)
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\scrapy\core\scheduler.py", line 114, in _newdq
+    return self.dqclass(join(self.dqdir, 'p%s' % priority))
+  File "D:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\queuelib\queue.py", line 142, in __init__
+    self.size, = struct.unpack(self.SIZE_FORMAT, qsize)
+struct.error: unpack requires a bytes object of length 4

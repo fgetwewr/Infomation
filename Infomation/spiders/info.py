@@ -13,7 +13,6 @@ from scrapy.utils.project import get_project_settings
 settings = get_project_settings()
 
 # import logging
-#
 # logger = logging.getLogger(__name__)
 
 
@@ -199,12 +198,12 @@ class InformationSpider(scrapy.Spider):
                     # print(e)
                     item['brandPos'] = '0'
                     # print(item)
-                    self.logger.info('超时，请求详情页%s' % item['link'])
+                    # self.logger.info('超时，请求详情页%s' % item['link'])
 
             item['fromSrc'] = '1'       # 抓取来源 1: 百度新闻资讯抓取,2: 百度网页抓取，3: 今日头条抓取
             item['createdAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')     # 创建时间
             item['updatedAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')     # 更新时间
-
+            item['note'] = response.url
             yield item
 
         # 获取下一页链接
@@ -222,7 +221,7 @@ class InformationSpider(scrapy.Spider):
                 )
 
     def domain_parse(self, response):
-        print('这是域名关键字')
+        # print('这是域名关键字')
 
         # 获取请求url，正则匹配到关键字，解码， 得到域名及关键字列表
         url = response.url
@@ -280,7 +279,7 @@ class InformationSpider(scrapy.Spider):
                 date = date[0].replace('年', '-').replace('月', '-').replace('日', '')
                 item['newsAt'] = date
             elif days:
-                p_days = (datetime.datetime.now() + datetime.timedelta(days=-int(days[0]))).strftime('%Y-%y-%d %H:%M:%S')
+                p_days = (datetime.datetime.now() + datetime.timedelta(days=-int(days[0]))).strftime('%Y-%m-%d %H:%M:%S')
                 # item['newAt'] = p_days.replace('n', '年').replace('y', '月').replace('r', '日')
                 item['newsAt'] = p_days
             elif hours:
@@ -313,7 +312,13 @@ class InformationSpider(scrapy.Spider):
                     # print(content)
                     text4 = pattern_info4.findall(content)
                     # print(text4)
-                    item['info'] = re.sub(r'<em>|</em>', '', text4[0].strip())
+                    if text4:
+                        item['info'] = re.sub(r'<em>|</em>', '', text4[0].strip())
+                    else:
+                        item['info'] = ''
+                        print('((((((((((((((((((((((((((((((')
+                        print(content)
+                        print(response.url)
             # print(item)
             # 获取图片
             image1 = info.xpath(r'.//a[@class="c-img6"]/img/@src').extract_first()      # 普通图片
@@ -348,13 +353,13 @@ class InformationSpider(scrapy.Spider):
                         item['brandPos'] = '0'
                 except Exception as e:
                     item['brandPos'] = '0'
-                    self.logger.info('超时， 请求详情页%s' % item['link'])
+                    # self.logger.info('超时， 请求详情页%s' % item['link'])
 
             item['relatedId'] = ''
             item['fromSrc'] = '2'       # 抓取来源 1: 百度新闻资讯抓取,2: 百度网页抓取，3: 今日头条抓取
             item['createdAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 创建时间
             item['updatedAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 更新时间
-
+            item['note'] = response.url
             yield item
         # 获取下一页链接
         url_next = response.xpath('//div[@id="page"]/a[re:test(text(),"下一页")]/@href').extract_first()

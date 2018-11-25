@@ -1,6 +1,22 @@
 import re
 import json
 import datetime
+
+t = datetime.datetime.now()
+y = datetime.timedelta(seconds=-58)
+y2 = datetime.timedelta(minutes=-10)
+y3 = datetime.timedelta(days=120)
+s = y + t
+s2 = y2 + t
+s3 = y3 + t
+
+print(t)
+print(y)
+print(s)
+print(s2)
+print(s3)
+
+
 #
 # string1 = '星界游神巴德掌控星空之力的强大辅助 LOL新英雄星界游神巴德即将...'
 # string2 = '星界游神巴德掌控星空媒体之力的强大辅助 LOL新英雄星界游神巴德即将...'
@@ -135,25 +151,27 @@ import urllib
 # item['newAt'] = p_hours.replace('n', '年').replace('y', '月').replace('r', '日')
 
 
-import pymysql
-from scrapy.utils.project import get_project_settings
+# import pymysql
+# from scrapy.utils.project import get_project_settings
+#
+# settings = get_project_settings()
+# port = settings['MYSQL_PORT']
+# host = settings['MYSQL_HOST']
+# user = settings['MYSQL_USER']
+# dbname = settings['MYSQL_DATABASE']
+# password = settings['MYSQL_PASSWORD']
+#
+# db = pymysql.connect(host=host, port=port, user=user, db=dbname, password=password)
+# cursor = db.cursor()
+#
+# brand_sql = """select * from media;"""
+# cursor.execute(brand_sql)
+# result = cursor.fetchall()
+# print(result)
+# for i in result:
+#     print(i)
 
-settings = get_project_settings()
-port = settings['MYSQL_PORT']
-host = settings['MYSQL_HOST']
-user = settings['MYSQL_USER']
-dbname = settings['MYSQL_DATABASE']
-password = settings['MYSQL_PASSWORD']
 
-db = pymysql.connect(host=host, port=port, user=user, db=dbname, password=password)
-cursor = db.cursor()
-
-brand_sql = """select * from media;"""
-cursor.execute(brand_sql)
-result = cursor.fetchall()
-print(result)
-for i in result:
-    print(i)
 # print(result[0][0], result[0][1])
 # print(result[1][0], result[1][1])
 # print(result[2][0], result[2][1])
