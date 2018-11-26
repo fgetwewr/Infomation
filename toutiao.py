@@ -2,7 +2,7 @@ import requests
 import json
 
 headers = {
-'referer': 'https://www.toutiao.com/search/?keyword=%E6%B5%B7%E5%BA%95%E6%8D%9E',
+# 'referer': 'https://www.toutiao.com/search/?keyword=%E6%B5%B7%E5%BA%95%E6%8D%9E',
 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
 }
 base_url = 'https://www.toutiao.com/search_content/?offset={}&format=json&keyword=海底捞&autoload=true&count=20&cur_tab=1&from=search_tab'

@@ -9,7 +9,7 @@ import json
 import pymongo
 import pymysql
 import traceback
-from pymysql.err import IntegrityError, InternalError
+from pymysql.err import IntegrityError, InternalError, DataError
 from scrapy.conf import settings
 from pymongo.errors import DuplicateKeyError
 
@@ -24,7 +24,8 @@ class MysqlPipeline(object):
         self.user = user
         self.password = password
         self.port = port
-
+        self.charset = 'utf8mb4'
+        self.use_unicode = True
     @classmethod
     def from_crawler(cls, crawler):
         return cls(
@@ -36,7 +37,7 @@ class MysqlPipeline(object):
         )
 
     def open_spider(self, spider):
-        self.db = pymysql.connect(host=self.host, port=self.port, user=self.user, db=self.database, password=self.password)
+        self.db = pymysql.connect(host=self.host, port=self.port, user=self.user, db=self.database, password=self.password, charset=self.charset, use_unicode=self.use_unicode)
         self.cursor = self.db.cursor()
 
     def process_item(self, item, spider):
@@ -56,10 +57,14 @@ class MysqlPipeline(object):
         except InternalError as e:
             print('不正确的值>>>>>:', item)
             logger.info(e)
-            traceback.print_exc()
+            # traceback.print_exc()
+        except DataError as e:
+            print('数据太长？？？？', item)
+            logger.info(e)
+            # traceback.print_exc()
         except Exception as e:
             self.db.rollback()
-            logger.info(e)
+            # logger.info(e)
         # return item
 
     def close_spider(self, spider):

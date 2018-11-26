@@ -1,5 +1,6 @@
 import requests
 import re
+import json
 import time
 import random
 import datetime
@@ -7,6 +8,7 @@ import pymysql
 import urllib
 from urllib import parse
 import scrapy
+from urllib.parse import urlencode
 from Infomation.items import InfomationItem
 from scrapy.utils.project import get_project_settings
 
@@ -67,8 +69,29 @@ class InformationSpider(scrapy.Spider):
                 media_url = 'https://www.baidu.com/s?wd=site:{} {}&pn=0&ie=utf-8'.format(media[4], brand[1])
                 yield scrapy.Request(url=media_url, callback=self.domain_parse)
 
-        # url = 'https://www.baidu.com/s?wd=site%3Aqq.com%20%E5%B0%8F%E9%BE%99%E5%9D%8E&pn=50&oq=site%3Aqq.com%20%E5%B0%8F%E9%BE%99%E5%9D%8E&ie=utf-8&rsv_pq=8c38cce90001fe91&rsv_t=3eb04O6LKEGXlLJoeZsuonFHwiQ9yCT1R84E4wmL1qPfNRUXInWoHL88i70&rsv_page=1%3E%20(referer:%20https://www.baidu.com/s?wd=site%3Aqq.com%20%E5%B0%8F%E9%BE%99%E5%9D%8E&pn=40&oq=site%3Aqq.com%20%E5%B0%8F%E9%BE%99%E5%9D%8E&ie=utf-8&rsv_pq=ca8e69290001ffb3&rsv_t=6cc2SSAFZCZIXs5hXy6cu%2F4VXSNU0IvN0mU4ac9c35NJXdl%2F6gX%2BzaGg6JA&rsv_page=1)'
-        # yield scrapy.Request(url, callback=self.domain_parse)
+        # 抓取今日头条
+        print(self.brand_dict.keys())
+        for keyword in self.brand_dict.keys():
+            offset = 0
+            for count in range(20):
+                data = {
+                    'offset': offset,
+                    'format': 'json',
+                    'keyword': keyword,
+                    'autoload': 'true',
+                    'count': '20',
+                    'cur_tab': '1',
+                    'from': 'search_tab',
+                    'pd': 'synthesis'
+                }
+                offset += 20
+                toutiao_url = 'https://www.toutiao.com/search_content/?' + urlencode(data)
+                # headers = {
+                #     'referer': 'https://www.toutiao.com/search/?keyword=%E6%B5%B7%E5%BA%95%E6%8D%9E',
+                #     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
+                # }
+                yield scrapy.Request(url=toutiao_url, callback=self.toutiao_parse)
+
     def brand_parse(self, response):
         # scrapy shell调试使用
         # if item['title'] == '今晚十点,我们要公布一件事情':
@@ -104,8 +127,6 @@ class InformationSpider(scrapy.Spider):
             # 判断是否有 "查看更多相关资讯"，如果有继续回调parse进行抓取
             more_info = info.xpath('.//span[@class="c-info"]/a[re:test(text(),".*?查看更多相关资讯.*?")]/@href').extract_first()
             if more_info:
-                # print('----------------------------------------')
-                # print('这是相关资讯里的内容')
                 relateId = item['autoId']   # 设置relateId, 关联autoId， 并将其传递给回调函数
                 more_info_url = response.urljoin(more_info)
                 yield scrapy.Request(
@@ -134,11 +155,6 @@ class InformationSpider(scrapy.Spider):
                 item['mediaName'] = pattern_media[0]
             else:
                 item['mediaName'] = ''
-            # print('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
-            # print(media)
-            # print('extract', media.extract())
-            # print('extract_first', media.extract_first())
-            # print(pattern_media)
 
             # 获取 格式为2018年10月08日 15:11 日期
             pattern_date = re.compile(r'<p class="c-author">.*?(\d+年\d+月\d+日 \d+:\d+).*?</p>', re.S)
@@ -203,7 +219,7 @@ class InformationSpider(scrapy.Spider):
             item['fromSrc'] = '1'       # 抓取来源 1: 百度新闻资讯抓取,2: 百度网页抓取，3: 今日头条抓取
             item['createdAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')     # 创建时间
             item['updatedAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')     # 更新时间
-            item['note'] = response.url
+            # item['note'] = response.url
             yield item
 
         # 获取下一页链接
@@ -251,7 +267,8 @@ class InformationSpider(scrapy.Spider):
             item['link'] = info.xpath('./h3[@class="t"]/a/@href').extract_first()
 
             # 获取标题
-            title_html = info.xpath('./h3[@class="t"]/a').extract_first()
+            # title_html = info.xpath('./h3[@class="t"]/a').extract_first()
+            title_html = info.xpath('./h3/a').extract_first()
             pattern1 = re.compile(r'target="_blank".*?>(.*?)</a>', re.S)
             title = pattern1.findall(title_html)
             item['title'] = re.sub(r'<em>|</em>', '', title[0]).strip()
@@ -316,9 +333,9 @@ class InformationSpider(scrapy.Spider):
                         item['info'] = re.sub(r'<em>|</em>', '', text4[0].strip())
                     else:
                         item['info'] = ''
-                        print('((((((((((((((((((((((((((((((')
-                        print(content)
-                        print(response.url)
+                        # print('((((((((((((((((((((((((((((((')
+                        # print(content)
+                        # print(response.url)
             # print(item)
             # 获取图片
             image1 = info.xpath(r'.//a[@class="c-img6"]/img/@src').extract_first()      # 普通图片
@@ -359,7 +376,7 @@ class InformationSpider(scrapy.Spider):
             item['fromSrc'] = '2'       # 抓取来源 1: 百度新闻资讯抓取,2: 百度网页抓取，3: 今日头条抓取
             item['createdAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 创建时间
             item['updatedAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 更新时间
-            item['note'] = response.url
+            # item['note'] = response.url
             yield item
         # 获取下一页链接
         url_next = response.xpath('//div[@id="page"]/a[re:test(text(),"下一页")]/@href').extract_first()
@@ -374,3 +391,56 @@ class InformationSpider(scrapy.Spider):
                     callback=self.domain_parse
                 )
 
+    def toutiao_parse(self, response):
+        # print(response.text)
+        dic = json.loads(response.text)
+        # print(dic.get('data'))
+
+        if dic and 'data' in dic.keys():
+            for node in dic.get('data'):
+                # print(node)
+                if 'open_url' in node:
+                    try:
+                        item = InfomationItem()
+                        keyword = node.get('keyword')       # 关键字
+
+                        item['brandId'] = self.brand_dict.get(keyword)     # 关键字Id
+                        item['link'] = node.get('article_url')      # 链接
+                        item['title'] = node.get('title')       # 标题
+                        item['info'] = node.get('abstract')       # 内容
+                        item['mediaName'] = node.get('media_name')     # 媒体名字
+                        item['newsAt'] = node.get('datetime')       # 发布时间
+
+                        # 判断关键字是否在标题或内容
+                        if keyword in item['title'] and keyword in item['info']:
+                            item['brandPos'] = '3'
+                        elif keyword in item['title']:
+                            item['brandPos'] = '1'
+                        elif keyword in item['info']:
+                            item['brandPos'] = '2'
+                        else:
+                            item['brandPos'] = '0'
+
+                        # 新闻对应类型，0: 无(默认),1: 图片地址, 2：视频地址
+                        if node.get('has_video'):
+                            item['newsType'] = '2'
+                        elif node.get('has_image'):
+                            item['newsType'] = '1'
+                        else:
+                            item['newsType'] = '0'
+
+                        item['newsLogoUrl'] = node.get('large_image_url')    # 文章包含的图片或视频地址， 如文章未包含媒体信息，则默认为空字符
+                        item['fromSrc'] = '3'        # 抓取来源 1: 百度新闻抓取,2: 百度网页抓取，3: 今日头条抓取
+
+                        # 对外暴露id
+                        rand_num = random.random() * 9000
+                        num = round(rand_num) + 1000
+                        timed = round(time.time() * 1000)
+                        item['autoId'] = str(num) + str(timed)
+
+                        item['relatedId'] = ''      # 相关资讯id, 此id是某一信息表id
+                        item['createdAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 创建时间
+                        item['updatedAt'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 更新时间
+                        yield item
+                    except:
+                        pass
