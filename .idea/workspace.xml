@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44c47cc1-df57-4017-b1f0-dfed04acb301" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Infomation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Infomation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infomation/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infomation/pipelines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infomation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infomation/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infomation/spiders/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infomation/spiders/info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawls/storeMyRequest/requests.queue/p0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawls/storeMyRequest/requests.queue/p1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baidu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawls/storeMyRequest/requests.queue/p0" beforeDir="false" afterPath="$PROJECT_DIR$/statistical.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawls/storeMyRequest/requests.seen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/toutiao.html" beforeDir="false" afterPath="$PROJECT_DIR$/toutiao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toutiao.py" beforeDir="false" afterPath="$PROJECT_DIR$/toutiao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain_key.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/infoSpiderlog20181126.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/infoSpiderlog20181126.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toutiao.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +24,12 @@
     <SUITE FILE_PATH="coverage/Infomation$create_table.coverage" NAME="create_table Coverage Results" MODIFIED="1542874668973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Infomation$pipelines.coverage" NAME="pipelines Coverage Results" MODIFIED="1542856647404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Infomation" />
     <SUITE FILE_PATH="coverage/Infomation$info.coverage" NAME="info Coverage Results" MODIFIED="1543196223889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Infomation/spiders" />
+    <SUITE FILE_PATH="coverage/Infomation$auto_id__1_.coverage" NAME="auto_id (1) Coverage Results" MODIFIED="1542619342437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Infomation$statistical.coverage" NAME="statistical Coverage Results" MODIFIED="1543314513885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Infomation$startScrapy.coverage" NAME="startScrapy Coverage Results" MODIFIED="1543287494795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Infomation$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1543065253797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Infomation$test.coverage" NAME="test Coverage Results" MODIFIED="1541570839542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Infomation/spiders" />
-    <SUITE FILE_PATH="coverage/Infomation$auto_id__1_.coverage" NAME="auto_id (1) Coverage Results" MODIFIED="1542619342437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Infomation$get_keyword__1_.coverage" NAME="get_keyword (1) Coverage Results" MODIFIED="1542619528432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Infomation$startScrapy.coverage" NAME="startScrapy Coverage Results" MODIFIED="1543220848129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Infomation$auto_id.coverage" NAME="auto_id Coverage Results" MODIFIED="1541662964003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Infomation/spiders" />
     <SUITE FILE_PATH="coverage/Infomation$get_keyword.coverage" NAME="get_keyword Coverage Results" MODIFIED="1541663122565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Infomation/spiders" />
     <SUITE FILE_PATH="coverage/Infomation$toutiao.coverage" NAME="toutiao Coverage Results" MODIFIED="1543195892171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -58,24 +59,24 @@
         <counts>
           <entry key="from" value="1" />
           <entry key="html" value="5" />
-          <entry key="json" value="7" />
+          <entry key="json" value="8" />
           <entry key="md" value="2" />
-          <entry key="py" value="80" />
+          <entry key="py" value="87" />
           <entry key="pyi" value="2" />
           <entry key="scrapy" value="1" />
           <entry key="seen" value="1" />
           <entry key="text" value="4" />
-          <entry key="txt" value="14" />
+          <entry key="txt" value="18" />
           <entry key="百度资讯抓取相关" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="5" />
-          <entry key="JSON" value="7" />
+          <entry key="JSON" value="8" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="24" />
-          <entry key="Python" value="80" />
+          <entry key="PLAIN_TEXT" value="28" />
+          <entry key="Python" value="87" />
           <entry key="PythonStub" value="2" />
         </counts>
       </usages-collector>
@@ -83,17 +84,17 @@
         <counts>
           <entry key="dummy" value="8" />
           <entry key="json" value="3" />
-          <entry key="py" value="38389" />
-          <entry key="txt" value="8" />
+          <entry key="py" value="43182" />
+          <entry key="txt" value="11" />
           <entry key="百度资讯抓取相关" value="119" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="3" />
-          <entry key="PLAIN_TEXT" value="135" />
-          <entry key="Python" value="38338" />
-          <entry key="SQL" value="51" />
+          <entry key="PLAIN_TEXT" value="138" />
+          <entry key="Python" value="43125" />
+          <entry key="SQL" value="57" />
         </counts>
       </usages-collector>
     </session>
@@ -132,110 +133,91 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.85488725">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Infomation/settings.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Infomation/spiders/info.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="212">
-                  <caret line="370" column="38" selection-start-line="370" selection-start-column="38" selection-end-line="370" selection-end-column="38" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="650">
-                  <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/startScrapy.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="100">
-                  <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/logs/infoSpiderlog20181126.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2808" />
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/toutiao.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="332">
-                  <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Infomation/pipelines.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="438">
-                  <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
-                  <folding>
-                    <element signature="e#194#205#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Infomation/items.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-76">
-                  <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Infomation/spiders/info.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-136">
-                  <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                    <element signature="e#4373#11235#0" />
-                    <element signature="e#11283#18421#0" />
-                    <element signature="e#17129#19011#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Infomation/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="55" column="75" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/statistical.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="658">
+              <caret line="142" column="21" lean-forward="true" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+                <marker date="1543314513871" expanded="true" signature="323:328" ph="..." />
+                <marker date="1543314513871" expanded="true" signature="3689:5205" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Infomation/spiders/info.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1822">
+              <caret line="343" column="44" selection-start-line="343" selection-start-column="44" selection-end-line="343" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/startScrapy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logs/infoSpiderlog20181127.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2598" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Infomation/pipelines.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#2452#2780#0" />
+                <element signature="e#2817#4095#0" />
+                <element signature="e#3362#4095#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/create_table.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2350">
+              <caret line="104" selection-start-line="104" selection-end-line="104" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generic_key.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-325">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -270,10 +252,12 @@
         <option value="$PROJECT_DIR$/Infomation/items.py" />
         <option value="$PROJECT_DIR$/logs/infoSpiderlog20181125.txt" />
         <option value="$PROJECT_DIR$/toutiao.py" />
-        <option value="$PROJECT_DIR$/Infomation/pipelines.py" />
-        <option value="$PROJECT_DIR$/Infomation/settings.py" />
         <option value="$PROJECT_DIR$/logs/infoSpiderlog20181126.txt" />
         <option value="$PROJECT_DIR$/Infomation/spiders/info.py" />
+        <option value="$PROJECT_DIR$/Infomation/settings.py" />
+        <option value="$PROJECT_DIR$/logs/infoSpiderlog20181127.txt" />
+        <option value="$PROJECT_DIR$/Infomation/pipelines.py" />
+        <option value="$PROJECT_DIR$/statistical.py" />
       </list>
     </option>
   </component>
@@ -284,10 +268,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="514" />
-    <option name="y" value="21" />
+    <option name="x" value="471" />
     <option name="width" value="1626" />
-    <option name="height" value="913" />
+    <option name="height" value="942" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -301,22 +284,6 @@
             <path>
               <item name="Infomation" type="b2602c69:ProjectViewProjectNode" />
               <item name="Infomation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Infomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Infomation" type="462c0819:PsiDirectoryNode" />
-              <item name="Infomation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Infomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Infomation" type="462c0819:PsiDirectoryNode" />
-              <item name="Infomation" type="462c0819:PsiDirectoryNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Infomation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Infomation" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -351,29 +318,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.startScrapy">
-    <configuration name="create_table" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Infomation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_table.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.statistical">
     <configuration name="info" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Infomation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -410,6 +355,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/startScrapy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="statistical" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Infomation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/statistical.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -465,17 +432,17 @@
     <list>
       <item itemvalue="Python.test (1)" />
       <item itemvalue="Python.startScrapy" />
-      <item itemvalue="Python.create_table" />
       <item itemvalue="Python.toutiao" />
       <item itemvalue="Python.info" />
+      <item itemvalue="Python.statistical" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.statistical" />
         <item itemvalue="Python.startScrapy" />
         <item itemvalue="Python.info" />
         <item itemvalue="Python.toutiao" />
         <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.create_table" />
       </list>
     </recent_temporary>
   </component>
@@ -502,15 +469,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="120" y="0" width="1626" height="913" extended-state="1" />
+    <frame x="471" y="0" width="1626" height="942" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15070243" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.090038314" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32580262" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25192803" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39952436" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3255814" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36431226" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39922482" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
@@ -535,10 +502,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://E:/资料库/资料/爬虫/03三阶段-02-pachong/day09/movieproject/movieproject/spiders/mm.py" />
-    <entry file="file://E:/资料库/资料/爬虫/03三阶段-02-pachong/day10/movieproject/movieproject/spiders/nn.py" />
-    <entry file="file://E:/资料库/资料/爬虫/03三阶段-02-pachong/day08/firstblood/firstblood/spiders/qiubai.py" />
-    <entry file="file://$PROJECT_DIR$/info.text" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/scrapy/spidermiddlewares/referer.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/scrapy/spiders/__init__.py" />
     <entry file="file://$PROJECT_DIR$/Infomation/spiders/test.py" />
@@ -560,13 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/scrapy/http/request/__init__.py" />
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1581108872/builtins.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pymysql/__init__.py" />
@@ -574,13 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/domain_key.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -594,27 +543,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/插入数据.py" />
-    <entry file="file://$PROJECT_DIR$/generic_key.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77025">
-          <caret line="3081" column="46" selection-start-line="3081" selection-start-column="46" selection-end-line="3081" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_table.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2750">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/mySpiderlog{startDate}.txt" />
     <entry file="file://$PROJECT_DIR$/baidu.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -657,38 +585,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
+        <state relative-caret-position="283">
           <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Infomation/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
-          <folding>
-            <element signature="e#194#205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/startScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Infomation/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-76">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/toutiao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
+        <state relative-caret-position="725">
           <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -696,26 +600,119 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Infomation/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain_key.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_table.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2350">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="3081" column="46" selection-start-line="3081" selection-start-column="46" selection-end-line="3081" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generic_key.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-325">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/isRunning.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Infomation/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="55" column="75" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Infomation/spiders/info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="370" column="38" selection-start-line="370" selection-start-column="38" selection-end-line="370" selection-end-column="38" />
+        <state relative-caret-position="-1822">
+          <caret line="343" column="44" selection-start-line="343" selection-start-column="44" selection-end-line="343" selection-end-column="44" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Infomation/settings.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/genericpath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+        <state relative-caret-position="297">
+          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/infoSpiderlog20181126.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2808" />
+        <state relative-caret-position="-141">
+          <caret line="229" column="82" selection-start-line="229" selection-start-column="82" selection-end-line="229" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startScrapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/infoSpiderlog20181127.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2598" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Infomation/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#2452#2780#0" />
+            <element signature="e#2817#4095#0" />
+            <element signature="e#3362#4095#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statistical.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="142" column="21" lean-forward="true" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1543314513871" expanded="true" signature="323:328" ph="..." />
+            <marker date="1543314513871" expanded="true" signature="3689:5205" ph="..." />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

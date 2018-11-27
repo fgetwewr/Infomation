@@ -6,6 +6,8 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 import json
+import os
+
 import pymongo
 import pymysql
 import traceback
@@ -15,6 +17,8 @@ from pymongo.errors import DuplicateKeyError
 
 import logging
 logger = logging.getLogger(__name__)
+
+check_file = 'isRunning.txt'
 
 
 class MysqlPipeline(object):
@@ -39,6 +43,11 @@ class MysqlPipeline(object):
     def open_spider(self, spider):
         self.db = pymysql.connect(host=self.host, port=self.port, user=self.user, db=self.database, password=self.password, charset=self.charset, use_unicode=self.use_unicode)
         self.cursor = self.db.cursor()
+
+        # # 启动爬虫时判断文件是否存在，存在则删除
+        # isFileExist = os.path.isfile(check_file)
+        # if isFileExist:
+        #     os.remove(check_file)
 
     def process_item(self, item, spider):
         data = dict(item)
@@ -70,6 +79,9 @@ class MysqlPipeline(object):
     def close_spider(self, spider):
         self.cursor.close()
         self.db.close()
+        f = open(check_file, 'w')       # 创建一个文件，代表爬虫结束运行
+        f.close()
+
 
 
 class InfomationPipeline(object):
