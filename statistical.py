@@ -60,7 +60,6 @@ class Statistical:
 
         # 先从media表中查询id和mediaName
         select_media = "select id, mediaName from media;"
-
         self.cursor.execute(select_media)
         media_tuple = self.cursor.fetchall()
         # 遍历媒体库，按当前日期查询每个媒体对应的根据关键词爬取的数据数量
@@ -96,7 +95,7 @@ class Statistical:
 
         select_brand = "select id from brand;"
         select_subBrand = "select id, name from subbrand;"
-        select_news = "select brandId, title, info from news;"
+        select_news = "select brandId, title, info from news where to_days(createdAt)=to_days(now());"
         self.cursor.execute(select_brand)
         brandId_tuple = self.cursor.fetchall()
 
@@ -111,6 +110,7 @@ class Statistical:
         self.cursor.execute(select_subBrand)
         subBrand_tuple = self.cursor.fetchall()
 
+        # 遍历副词表，news表，
         for subBrand in subBrand_tuple:
             subBrandId = subBrand[0]
             subBrand = subBrand[1]
@@ -119,6 +119,7 @@ class Statistical:
                 brandId = news[0]
                 title = news[1]
                 info = news[2]
+                # 判断副词是否在标题或内容里，如果在，相应的主词计数加一，
                 if subBrand in title or subBrand in info:
                     count_dic[brandId] += 1
 
@@ -129,11 +130,64 @@ class Statistical:
                 try:
                     self.cursor.execute(sub_sql)
                     self.db.commit()
-                    print('成功插入%s条数据')
+                    print('成功插入数据')
                 except Exception as e:
                     logger.info(e)
 
 
+    def mediaByDay2(self):
+        """该表保存系统媒体表中每个媒体每天的抓取量，计算逻辑是：抓取完品牌词数据后增量扫描所有信息在每个媒体上的数据量"""
+
+        # 先从media表中查询id和mediaName
+        select_media = "select id, mediaName from media;"
+        select_brand = "select id from brand;"
+        select_news = "select brandId,mediaName from news where to_days(NOW()) - TO_DAYS(createdAt) <= 1;"
+                      # "select brandId, title, info from news where to_days(createdAt)=to_days(now());"
+
+        self.cursor.execute(select_media)
+        media_tuple = self.cursor.fetchall()
+
+        self.cursor.execute(select_brand)
+        brandId_tuple = self.cursor.fetchall()
+
+        self.cursor.execute(select_news)
+        news_tuple = self.cursor.fetchall()
+
+        # 创建关键字计数字典
+        count_dic = {}
+        for brandId in brandId_tuple:
+            count_dic[brandId[0]] = 0
+
+
+        # 遍历媒体库，按当前日期查询每个媒体对应的根据关键词爬取的数据数量
+
+        dayDate = datetime.datetime.now().strftime('%Y-%m-%d')  # 统计日期
+        count = 1
+        for media in media_tuple:
+            mediaId = media[0]
+            mediaName = media[1]    # 媒体库中的媒体名
+
+
+            for news in news_tuple:
+                brandId = news[0]       # 品牌词id
+                news_mediaName = news[1]     # 新闻资讯中媒体名
+
+                if mediaName in news_mediaName:
+                    count_dic[brandId] += 1
+
+            for brandId, dayCount in count_dic.items():
+                createdAt = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                updatedAt = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                insert_sql = "insert into mediabyday(mediaId, brandId, dayCount, dayDate, createdAt, updatedAt) " \
+                             "values ('%s', '%s', '%s', '%s', '%s', '%s')" \
+                             % (mediaId, brandId, dayCount, dayDate, createdAt, updatedAt)
+                try:
+                    self.cursor.execute(insert_sql)
+                    self.db.commit()
+                    print('成功插入%s条数据' % count)
+                    count += 1
+                except Exception as e:
+                    logger.info(e)
 
     def mediaAddByDay(self):
         pass
@@ -143,4 +197,5 @@ if __name__ == '__main__':
     s = Statistical()
     # s.newsByDay()
     # s.mediaByDay()
-    s.subBrandByDay()
+    s.mediaByDay2()
+    # s.subBrandByDay()
